@@ -25,13 +25,22 @@
   <ul class="grid">
     @for (app of apps(); track app.id) {
       <li class="app card" appSpotlight animate.enter="app-in">
-        <img class="icon-img" [src]="app.logo" alt="" loading="lazy" width="64" height="64" />
+        @if (app.logo) {
+          <img class="icon-img" [src]="app.logo" alt="" loading="lazy" width="64" height="64" />
+        } @else {
+          <span class="icon-img icon-img--mono" aria-hidden="true">{{ app.monogram }}</span>
+        }
         <div class="meta">
           <h3>{{ app.name }}</h3>
-          <p>{{ app.company }}</p>
+          <p>{{ app.client ?? app.company }}</p>
         </div>
-        @if (app.googleUrl || app.appleUrl) {
+        @if (app.googleUrl || app.appleUrl || app.webUrl) {
           <div class="stores">
+            @if (app.webUrl) {
+              <a class="store" [href]="app.webUrl" target="_blank" rel="noopener">
+                {{ text().openSite }}<app-icon name="arrow-up-right" />
+              </a>
+            }
             @if (app.googleUrl) {
               <a class="store" [href]="app.googleUrl" target="_blank" rel="noopener">
                 {{ text().googlePlay }}<app-icon name="arrow-up-right" />

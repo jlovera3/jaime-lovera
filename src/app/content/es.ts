@@ -2,9 +2,9 @@ import { Content } from '../core/i18n/content.model';
 
 export const ES: Content = {
   meta: {
-    title: 'Jaime Lovera — Ingeniero Frontend y Móvil',
+    title: 'Jaime Lovera — Ingeniero Frontend y Jefe de Proyecto Técnico',
     description:
-      'Ingeniero frontend y móvil que crea apps rápidas y cuidadas para web, iOS y Android. Portfolio y currículum de Jaime Lovera.',
+      'Ingeniero frontend y jefe de proyecto técnico que crea y lidera productos web y móviles cuidados. Portfolio y currículum de Jaime Lovera.',
   },
   a11y: {
     skipToContent: 'Saltar al contenido',
@@ -21,15 +21,15 @@ export const ES: Content = {
     skills: 'Skills',
     contact: 'Contacto',
   },
-  splash: { role: 'Ingeniero Frontend y Móvil', skip: 'Saltar intro' },
+  splash: { role: 'Ingeniero Frontend y Jefe de Proyecto Técnico', skip: 'Saltar intro' },
   hero: {
-    eyebrow: 'Ingeniero Frontend y Móvil',
+    eyebrow: 'Ingeniero Frontend y Jefe de Proyecto Técnico',
     headline: {
-      before: 'Creo experiencias',
-      accent: 'móviles y web',
-      after: 'rápidas y cuidadas.',
+      before: 'Creo y lidero productos',
+      accent: 'web y móviles',
+      after: 'de calidad.',
     },
-    lead: 'Publico apps de producción en App Store y Google Play, y me importan la arquitectura limpia, el rendimiento y los pequeños detalles que hacen que un producto se sienta bien.',
+    lead: 'Desde apps en App Store y Google Play hasta plataformas web corporativas, me importan la arquitectura limpia, el rendimiento y los detalles que hacen que un producto se sienta bien. Hoy además lidero la entrega técnica de un gran programa de seguros.',
     ctaWork: 'Ver proyectos',
     ctaContact: 'Contactar',
     scroll: 'Desliza',
@@ -40,6 +40,7 @@ export const ES: Content = {
     paragraphs: [
       'Tras estudiar Ingeniería Industrial durante unos años, descubrí mi pasión por programar y crear apps móviles. Desde entonces me dedico por completo a mejorar en el oficio.',
       'Soy cercano, mantengo la calma bajo presión y disfruto resolviendo problemas, ya sea desenredando un bug en producción, liderando un pequeño equipo o puliendo una interacción hasta que se siente bien.',
+      'Desde 2025 en knowmad mood he pasado del desarrollo frontend a la jefatura técnica de proyecto: coordino ingenieros, gestiono la entrega y participo en decisiones de arquitectura para un gran cliente corporativo.',
     ],
     educationTitle: 'Formación',
     education: {
@@ -51,12 +52,20 @@ export const ES: Content = {
   experience: {
     eyebrow: 'Experiencia',
     title: 'Dónde he trabajado',
-    subtitle: 'Cuatro equipos, cuatro productos muy distintos y un mismo foco en la calidad.',
+    subtitle: 'Cinco equipos, productos muy distintos y un mismo foco en la calidad.',
     present: 'Actualidad',
     visit: 'Visitar web',
-    apps: ['app', 'apps'],
+    apps: ['proyecto', 'proyectos'],
     units: { year: ['año', 'años'], month: ['mes', 'meses'] },
     companies: {
+      knowmad: {
+        role: 'Desarrollador Frontend y Jefe de Proyecto Técnico',
+        highlights: [
+          'Entré como Desarrollador Frontend y he crecido hasta la jefatura técnica de proyecto en un programa corporativo de seguros.',
+          'Entrega para tres clientes muy distintos: monitorización de infraestructuras, logística portuaria y seguros.',
+          'Del desarrollo de apps móviles a plataformas web de gran escala y arquitectura corporativa.',
+        ],
+      },
       meinestadt: {
         role: 'Desarrollador Frontend',
         highlights: [
@@ -92,14 +101,41 @@ export const ES: Content = {
         ],
       },
     },
+    engagementsTitle: 'Proyectos para clientes',
+    engagements: {
+      generali: {
+        title: 'Journeys digitales de seguros · Regal y Genesis',
+        points: [
+          'Transformación del proceso de autocontratación de seguros de coche de las marcas Regal y Genesis de Generali.',
+          'Desde junio de 2026, jefe de proyecto técnico: planificación y entrega entre equipos y coordinación diaria de un equipo de desarrolladores de integración MuleSoft.',
+          'Participación en decisiones de arquitectura de un gran programa corporativo de integración de backend.',
+        ],
+      },
+      nodus: {
+        title: 'Plataforma de operaciones portuarias',
+        points: [
+          'Plataforma web de gestión interna para las operaciones del puerto de Montevideo: recepción de buques y contenedores, pagos, facturación y generación de documentos.',
+          'Mi primer paso del móvil a aplicaciones web de gran escala, construida con Angular.',
+        ],
+      },
+      ofiteco: {
+        title: 'AppXData · App de monitorización de infraestructuras',
+        points: [
+          'App de campo con la que los operarios toman lecturas de sensores en puentes, túneles y presas para planificar el mantenimiento y mantener las infraestructuras en buen estado.',
+          'La actualicé desde una de las primeras versiones de Angular a la última y la migré de Cordova a Capacitor.',
+          'Entregada de principio a fin como único desarrollador, nada más incorporarme a la empresa.',
+        ],
+      },
+    },
   },
   work: {
     eyebrow: 'Proyectos destacados',
-    title: 'Apps en las tiendas',
-    subtitle: 'Una selección de las apps que he creado o mantenido, disponibles en iOS y Android.',
+    title: 'Apps y plataformas',
+    subtitle: 'Una selección de las apps y plataformas web que he creado o mantenido, disponibles en iOS, Android y web.',
     all: 'Todas',
     googlePlay: 'Google Play',
     appStore: 'App Store',
+    openSite: 'Abrir web',
     filterLabel: 'Filtrar por empresa',
   },
   skills: {

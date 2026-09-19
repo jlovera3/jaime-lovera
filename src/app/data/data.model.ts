@@ -1,20 +1,36 @@
-export type CompanyId = 'meinestadt' | 'nttdata' | 'magtel' | 'ptv';
+export type CompanyId = 'knowmad' | 'meinestadt' | 'nttdata' | 'magtel' | 'ptv';
+export type EngagementId = 'generali' | 'nodus' | 'ofiteco';
 export type SkillGroupId = 'frontend' | 'mobile' | 'backend' | 'data' | 'craft';
 export type EducationId = 'university' | 'degree';
 
 export interface AppProject {
   id: string;
   name: string;
-  logo: string;
+  /** Client shown under the name when it differs from the employer */
+  client?: string;
+  /** Square icon. Without one, the card falls back to a `monogram` tile */
+  logo?: string;
+  monogram?: string;
   googleUrl?: string;
   appleUrl?: string;
+  webUrl?: string;
+}
+
+/** A client project done while employed by a consultancy */
+export interface Engagement {
+  id: EngagementId;
+  client: string;
+  url?: string;
+  /** ISO year-month; both omitted when the dates are not public */
+  start?: string;
+  end?: string | null;
 }
 
 export interface Company {
   id: CompanyId;
   name: string;
   url: string;
-  /** File name (without extension) under assets/companies */
+  /** Path to the logo under assets/companies */
   logo: string;
   /** ISO year-month, e.g. "2023-01" */
   start: string;
@@ -22,6 +38,7 @@ export interface Company {
   end: string | null;
   /** Only technologies explicitly used there */
   stack?: string[];
+  engagements?: Engagement[];
   projects: AppProject[];
 }
 

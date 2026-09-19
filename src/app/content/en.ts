@@ -2,9 +2,9 @@ import { Content } from '../core/i18n/content.model';
 
 export const EN: Content = {
   meta: {
-    title: 'Jaime Lovera — Frontend & Mobile Engineer',
+    title: 'Jaime Lovera — Frontend Engineer & Technical Project Lead',
     description:
-      'Frontend and mobile engineer building fast, polished apps for web, iOS and Android. Portfolio and CV of Jaime Lovera.',
+      'Frontend engineer and technical project lead building and leading polished web and mobile products. Portfolio and CV of Jaime Lovera.',
   },
   a11y: {
     skipToContent: 'Skip to content',
@@ -21,15 +21,15 @@ export const EN: Content = {
     skills: 'Skills',
     contact: 'Contact',
   },
-  splash: { role: 'Frontend & Mobile Engineer', skip: 'Skip intro' },
+  splash: { role: 'Frontend Engineer & Technical Project Lead', skip: 'Skip intro' },
   hero: {
-    eyebrow: 'Frontend & Mobile Engineer',
+    eyebrow: 'Frontend Engineer & Technical Project Lead',
     headline: {
-      before: 'I build fast, polished',
-      accent: 'mobile & web',
-      after: 'experiences.',
+      before: 'I build and lead',
+      accent: 'web & mobile',
+      after: 'products.',
     },
-    lead: 'I ship production apps to the App Store and Google Play, and I care about clean architecture, performance and the small details that make a product feel right.',
+    lead: 'From apps in the App Store and Google Play to enterprise web platforms, I care about clean architecture, performance and the details that make a product feel right. Today I also lead technical delivery on a large insurance programme.',
     ctaWork: 'View my work',
     ctaContact: 'Get in touch',
     scroll: 'Scroll',
@@ -40,6 +40,7 @@ export const EN: Content = {
     paragraphs: [
       'After studying Industrial Engineering for a few years, I found my love for programming and making mobile apps. Since then I have been fully dedicated to getting better at the craft.',
       'I am friendly, I stay calm under pressure and I enjoy solving problems, whether that means untangling a bug in production, leading a small team or polishing an interaction until it feels right.',
+      'Since 2025 at knowmad mood I have grown from hands-on frontend work into technical project leadership: coordinating engineers, managing delivery and taking part in architecture decisions for a large enterprise client.',
     ],
     educationTitle: 'Education',
     education: {
@@ -51,12 +52,20 @@ export const EN: Content = {
   experience: {
     eyebrow: 'Experience',
     title: 'Where I have worked',
-    subtitle: 'Four teams, four very different products, one common focus on quality.',
+    subtitle: 'Five teams, very different products, one common focus on quality.',
     present: 'Present',
     visit: 'Visit website',
-    apps: ['app', 'apps'],
+    apps: ['project', 'projects'],
     units: { year: ['yr', 'yrs'], month: ['mo', 'mos'] },
     companies: {
+      knowmad: {
+        role: 'Frontend Developer & Technical Project Lead',
+        highlights: [
+          'Joined as a Frontend Developer and grew into technical project leadership on an enterprise insurance programme.',
+          'Delivered for three very different clients: infrastructure monitoring, port logistics and insurance.',
+          'Moved from mobile apps to large-scale web platforms and enterprise architecture.',
+        ],
+      },
       meinestadt: {
         role: 'Frontend Developer',
         highlights: [
@@ -92,14 +101,41 @@ export const EN: Content = {
         ],
       },
     },
+    engagementsTitle: 'Client engagements',
+    engagements: {
+      generali: {
+        title: 'Digital insurance journeys · Regal & Genesis',
+        points: [
+          'Transformation of the self-service car-insurance quote and purchase journey for Generali’s Regal and Genesis brands.',
+          'Since June 2026, technical project lead: planning and delivery across teams and day-to-day coordination of a team of MuleSoft integration developers.',
+          'Contributing to architecture decisions on a large enterprise backend-integration programme.',
+        ],
+      },
+      nodus: {
+        title: 'Port operations platform',
+        points: [
+          'Internal management web platform for port operations in Montevideo: vessel and container reception, payments, invoicing and document generation.',
+          'My first step from mobile into large-scale web applications, built with Angular.',
+        ],
+      },
+      ofiteco: {
+        title: 'AppXData · Infrastructure monitoring app',
+        points: [
+          'Field app that lets operators take sensor readings on bridges, tunnels and dams so maintenance can be planned and infrastructure kept in good condition.',
+          'Upgraded it from an early Angular version to the latest release and migrated it from Cordova to Capacitor.',
+          'Delivered end to end as the only developer, right after joining the company.',
+        ],
+      },
+    },
   },
   work: {
     eyebrow: 'Selected work',
-    title: 'Apps in the stores',
-    subtitle: 'A selection of the apps I have built or maintained, live on iOS and Android.',
+    title: 'Apps & platforms',
+    subtitle: 'A selection of the apps and web platforms I have built or maintained, live on iOS, Android and the web.',
     all: 'All',
     googlePlay: 'Google Play',
     appStore: 'App Store',
+    openSite: 'Open site',
     filterLabel: 'Filter by company',
   },
   skills: {

@@ -1,4 +1,4 @@
-import { CompanyId, EducationId, SkillGroupId } from '../../data/data.model';
+import { CompanyId, EducationId, EngagementId, SkillGroupId } from '../../data/data.model';
 
 export type Lang = 'en' | 'es';
 
@@ -52,6 +52,8 @@ export interface Content {
     apps: [one: string, many: string];
     units: DurationUnits;
     companies: Record<CompanyId, { role: string; highlights: string[] }>;
+    engagementsTitle: string;
+    engagements: Record<EngagementId, { title: string; points: string[] }>;
   };
   work: {
     eyebrow: string;
@@ -60,6 +62,7 @@ export interface Content {
     all: string;
     googlePlay: string;
     appStore: string;
+    openSite: string;
     filterLabel: string;
   };
   skills: {

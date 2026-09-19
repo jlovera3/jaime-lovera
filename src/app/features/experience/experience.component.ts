@@ -28,13 +28,19 @@ export class ExperienceComponent {
     const locale = this.language.locale();
     return COMPANIES.map((company) => {
       const copy = t.companies[company.id];
-      const start = formatMonth(company.start, locale);
-      const end = company.end ? formatMonth(company.end, locale) : t.present;
+      const range = (from: string, to: string | null | undefined) =>
+        `${formatMonth(from, locale)} — ${to ? formatMonth(to, locale) : t.present}`;
+      const engagements = (company.engagements ?? []).map((engagement) => ({
+        ...engagement,
+        ...t.engagements[engagement.id],
+        period: engagement.start ? range(engagement.start, engagement.end) : null,
+      }));
       return {
         ...company,
+        engagements,
         role: copy.role,
         highlights: copy.highlights,
-        period: `${start} — ${end}`,
+        period: range(company.start, company.end),
         duration: formatDuration(monthsBetween(company.start, company.end), t.units),
         appsLabel: t.apps[company.projects.length === 1 ? 0 : 1],
       };

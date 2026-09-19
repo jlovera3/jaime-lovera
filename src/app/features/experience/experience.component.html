@@ -22,7 +22,7 @@
             >
               <span class="plate">
                 <img
-                  [src]="'assets/companies/' + job.logo + '.png'"
+                  [src]="job.logo"
                   alt=""
                   loading="lazy"
                   width="96"
@@ -48,6 +48,34 @@
                   <li>{{ line }}</li>
                 }
               </ul>
+
+              @if (job.engagements.length) {
+                <h4 class="sub">{{ text().engagementsTitle }}</h4>
+                <ul class="engagements">
+                  @for (eng of job.engagements; track eng.id) {
+                    <li class="engagement">
+                      <div class="engagement__head">
+                        @if (eng.url) {
+                          <a class="client" [href]="eng.url" target="_blank" rel="noopener">
+                            {{ eng.client }}<app-icon name="arrow-up-right" />
+                          </a>
+                        } @else {
+                          <span class="client">{{ eng.client }}</span>
+                        }
+                        @if (eng.period) {
+                          <span class="engagement__period">{{ eng.period }}</span>
+                        }
+                      </div>
+                      <p class="engagement__title">{{ eng.title }}</p>
+                      <ul class="points">
+                        @for (point of eng.points; track point) {
+                          <li>{{ point }}</li>
+                        }
+                      </ul>
+                    </li>
+                  }
+                </ul>
+              }
 
               <div class="foot">
                 @if (job.stack) {

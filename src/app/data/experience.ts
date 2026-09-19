@@ -4,10 +4,50 @@ import { Company } from './data.model';
 // Ordered from most recent to oldest.
 export const COMPANIES: Company[] = [
   {
+    id: 'knowmad',
+    name: 'knowmad mood',
+    url: 'https://www.knowmadmood.com/',
+    logo: 'assets/companies/logo-knowmad.svg',
+    start: '2025-04',
+    end: null,
+    stack: ['Angular', 'Capacitor'],
+    // Most recent first
+    engagements: [
+      {
+        id: 'generali',
+        client: 'Generali',
+        url: 'https://www.generali.es/',
+        start: '2025-11',
+        end: null,
+      },
+      { id: 'nodus', client: 'Nodus' },
+      { id: 'ofiteco', client: 'Ofiteco', url: 'https://www.ofiteco.com/' },
+    ],
+    projects: [
+      {
+        id: 'regal-autos',
+        name: 'Regal Autos',
+        client: 'Generali',
+        logo: 'assets/projects/regal-app.svg',
+        webUrl: 'https://tarificador-coche.regal.es/webapps/omnichannel-regal/#/autos/questions/insurance-start',
+      },
+      {
+        id: 'genesis-autos',
+        name: 'Genesis Autos',
+        client: 'Generali',
+        logo: 'assets/projects/genesis-app.svg',
+        webUrl:
+          'https://tarificador-coche.genesis.es/webapps/omnichannel-genesis/#/autos/questions/insurance-start',
+      },
+      { id: 'nodus', name: 'Nodus', client: 'Port operations · Montevideo', monogram: 'N' },
+      { id: 'appxdata', name: 'AppXData', client: 'Ofiteco', monogram: 'AX' },
+    ],
+  },
+  {
     id: 'meinestadt',
     name: 'Meinestadt',
     url: 'https://www.meinestadt.de/',
-    logo: 'logo-meinestadt',
+    logo: 'assets/companies/logo-meinestadt.png',
     start: '2023-01',
     end: '2025-01',
     projects: [
@@ -24,7 +64,7 @@ export const COMPANIES: Company[] = [
     id: 'nttdata',
     name: 'NTT Data',
     url: 'https://www.nttdata.com/global/en/',
-    logo: 'logo_nttdata',
+    logo: 'assets/companies/logo_nttdata.png',
     start: '2021-11',
     end: '2022-12',
     projects: [
@@ -79,7 +119,7 @@ export const COMPANIES: Company[] = [
     id: 'magtel',
     name: 'Magtel',
     url: 'https://magtel.es/',
-    logo: 'logo-magtel',
+    logo: 'assets/companies/logo-magtel.png',
     start: '2021-06',
     end: '2021-10',
     stack: ['Ionic', 'Angular', 'Cordova', 'Laravel', 'AR / VR'],
@@ -116,7 +156,7 @@ export const COMPANIES: Company[] = [
     id: 'ptv',
     name: 'PTV Telecom',
     url: 'https://www.ptvtelecom.com/',
-    logo: 'logo-ptv-telecom',
+    logo: 'assets/companies/logo-ptv-telecom.png',
     start: '2020-09',
     end: '2021-06',
     stack: ['Ionic', 'Angular', 'TypeScript', 'PHP'],

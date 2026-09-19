@@ -17,7 +17,14 @@ export const SKILL_GROUPS: SkillGroup[] = [
     ],
   },
   { id: 'mobile', items: ['Ionic', 'Capacitor', 'Cordova', 'iOS & Android', 'AR / VR'] },
-  { id: 'backend', items: ['Node.js', 'Laravel', 'PHP'] },
+  { id: 'backend', items: ['Node.js', 'C#', 'Laravel', 'PHP'] },
   { id: 'data', items: ['MongoDB', 'MySQL', 'SQLite', 'Firebase'] },
-  { id: 'craft', items: ['Git', 'Agile / Scrum', 'Team leadership', 'Store releases'] },
+  { id: 'craft', items: [
+      'Technical project management',
+      'Team leadership',
+      'Architecture',
+      'Agile / Scrum',
+      'Git',
+      'Store releases',
+    ], },
 ];
