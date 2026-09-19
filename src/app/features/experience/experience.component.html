@@ -1,0 +1,72 @@
+<section id="experience" class="section container">
+  <app-section-heading
+    index="02"
+    [eyebrow]="text().eyebrow"
+    [title]="text().title"
+    [subtitle]="text().subtitle"
+  />
+
+  <ol class="timeline">
+    @for (job of jobs(); track job.id; let i = $index) {
+      <li class="entry" [appReveal]="i * 90">
+        <span class="node" [class.is-open]="openId() === job.id"></span>
+
+        <article class="job card" appSpotlight [class.is-open]="openId() === job.id">
+          <h3>
+            <button
+              type="button"
+              class="head"
+              [attr.aria-expanded]="openId() === job.id"
+              [attr.aria-controls]="'job-' + job.id"
+              (click)="toggle(job.id)"
+            >
+              <span class="plate">
+                <img
+                  [src]="'assets/companies/' + job.logo + '.png'"
+                  alt=""
+                  loading="lazy"
+                  width="96"
+                  height="54"
+                />
+              </span>
+              <span class="who">
+                <span class="role">{{ job.role }}</span>
+                <span class="company">{{ job.name }}</span>
+              </span>
+              <span class="when">
+                <span class="period">{{ job.period }}</span>
+                <span class="duration">{{ job.duration }}</span>
+              </span>
+              <span class="chevron"><app-icon name="arrow-down" /></span>
+            </button>
+          </h3>
+
+          <div class="panel" [id]="'job-' + job.id" [attr.inert]="openId() === job.id ? null : ''">
+            <div class="panel__clip">
+              <ul class="highlights">
+                @for (line of job.highlights; track line) {
+                  <li>{{ line }}</li>
+                }
+              </ul>
+
+              <div class="foot">
+                @if (job.stack) {
+                  <ul class="stack">
+                    @for (tech of job.stack; track tech) {
+                      <li class="chip">{{ tech }}</li>
+                    }
+                  </ul>
+                }
+                <span class="count">{{ job.projects.length }} {{ job.appsLabel }}</span>
+                <a class="visit" [href]="job.url" target="_blank" rel="noopener">
+                  {{ text().visit }}
+                  <app-icon name="arrow-up-right" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </li>
+    }
+  </ol>
+</section>

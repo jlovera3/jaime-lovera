@@ -1,0 +1,31 @@
+<section id="contact" class="section container">
+  <div class="panel card" appReveal>
+    <span class="aura" aria-hidden="true"></span>
+    <app-section-heading index="05" [eyebrow]="text().eyebrow" [title]="text().title" [subtitle]="text().text" />
+
+    <div class="actions">
+      <a class="btn btn--primary" [href]="'mailto:' + email">
+        <app-icon name="mail" />
+        {{ text().write }}
+      </a>
+      <button type="button" class="btn btn--ghost" (click)="copy()">
+        <app-icon [name]="copied() ? 'check' : 'copy'" />
+        <span aria-live="polite">{{ copied() ? text().copied : text().copy }}</span>
+      </button>
+    </div>
+
+    <p class="address">{{ email }}</p>
+
+    @if (links.length) {
+      <ul class="links">
+        @for (link of links; track link.url) {
+          <li>
+            <a class="chip" [href]="link.url" target="_blank" rel="noopener">
+              {{ link.label }}<app-icon name="arrow-up-right" />
+            </a>
+          </li>
+        }
+      </ul>
+    }
+  </div>
+</section>

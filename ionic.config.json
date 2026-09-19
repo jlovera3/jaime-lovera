@@ -1,0 +1,7 @@
+{
+  "name": "jaimes-cv-app-angular",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

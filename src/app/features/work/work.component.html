@@ -1,0 +1,50 @@
+<section id="work" class="section container">
+  <app-section-heading
+    index="03"
+    [eyebrow]="text().eyebrow"
+    [title]="text().title"
+    [subtitle]="text().subtitle"
+  />
+
+  <div class="filters" role="group" [attr.aria-label]="text().filterLabel" appReveal>
+    <button type="button" class="filter" [attr.aria-pressed]="filter() === 'all'" (click)="filter.set('all')">
+      {{ text().all }}
+    </button>
+    @for (company of companies; track company.id) {
+      <button
+        type="button"
+        class="filter"
+        [attr.aria-pressed]="filter() === company.id"
+        (click)="filter.set(company.id)"
+      >
+        {{ company.name }}
+      </button>
+    }
+  </div>
+
+  <ul class="grid">
+    @for (app of apps(); track app.id) {
+      <li class="app card" appSpotlight animate.enter="app-in">
+        <img class="icon-img" [src]="app.logo" alt="" loading="lazy" width="64" height="64" />
+        <div class="meta">
+          <h3>{{ app.name }}</h3>
+          <p>{{ app.company }}</p>
+        </div>
+        @if (app.googleUrl || app.appleUrl) {
+          <div class="stores">
+            @if (app.googleUrl) {
+              <a class="store" [href]="app.googleUrl" target="_blank" rel="noopener">
+                {{ text().googlePlay }}<app-icon name="arrow-up-right" />
+              </a>
+            }
+            @if (app.appleUrl) {
+              <a class="store" [href]="app.appleUrl" target="_blank" rel="noopener">
+                {{ text().appStore }}<app-icon name="arrow-up-right" />
+              </a>
+            }
+          </div>
+        }
+      </li>
+    }
+  </ul>
+</section>

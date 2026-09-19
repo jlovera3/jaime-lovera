@@ -1,0 +1,25 @@
+@if (!hasNotch()) {
+  <!-- Android without Notch -->
+  <ion-header
+    class="h-[12vh] pt-[env(safe-area-inset-top)] bg-banner bg-cover bg-center bg-no-repeat flex"
+  >
+    <button type="button" aria-label="Back" class="m-8 bg-transparent" (click)="back()">
+      <ion-icon class="h-10 w-10 icon-white" [icon]="arrowBackCircleOutline" aria-hidden="true"></ion-icon>
+    </button>
+  </ion-header>
+} @else {
+  <!-- iOS with Notch -->
+  <ion-header
+    class="h-[16vh] pt-[env(safe-area-inset-top)] bg-banner-notch bg-cover bg-center bg-no-repeat flex"
+  ></ion-header>
+}
+<ion-content>
+  <div class="w-full flex">
+    <ion-card class="h-20 w-20 rounded-[100%]">
+      <img [src]="project().logo" [alt]="project().name" class="h-20 w-20" />
+    </ion-card>
+    <ion-label class="my-8 mx-4">
+      <h3>{{ project().name }}</h3>
+    </ion-label>
+  </div>
+</ion-content>

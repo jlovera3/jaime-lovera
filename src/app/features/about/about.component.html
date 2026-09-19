@@ -1,0 +1,40 @@
+<section id="about" class="section container">
+  <div class="layout">
+    <div class="intro">
+      <app-section-heading index="01" [eyebrow]="about().eyebrow" [title]="about().title" />
+
+      <div class="copy">
+        @for (paragraph of about().paragraphs; track $index) {
+          <p [appReveal]="200 + $index * 100">{{ paragraph }}</p>
+        }
+      </div>
+    </div>
+
+    <div class="side">
+      <ul class="stats">
+        @for (stat of stats(); track stat.label; let i = $index) {
+          <li class="card stat" appSpotlight [appReveal]="i * 100">
+            <strong><app-count-up [value]="stat.value" [suffix]="stat.suffix" /></strong>
+            <span>{{ stat.label }}</span>
+          </li>
+        }
+      </ul>
+
+      <div class="edu card" appSpotlight [appReveal]="150">
+        <h3 class="eyebrow">{{ about().educationTitle }}</h3>
+        <ol>
+          @for (entry of education; track entry.id) {
+            <li>
+              <span class="years">{{ entry.start }} — {{ entry.end }}</span>
+              <p class="degree">{{ about().education[entry.id] }}</p>
+              <a class="place" [href]="entry.mapUrl" target="_blank" rel="noopener">
+                <app-icon name="map-pin" />
+                {{ entry.place }}
+              </a>
+            </li>
+          }
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

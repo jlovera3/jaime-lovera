@@ -1,0 +1,50 @@
+<section id="top" class="hero container">
+  <div class="hero__text">
+    <p class="eyebrow fx fx--1"><span class="dot"></span>{{ hero().eyebrow }}</p>
+
+    <h1 class="title" [attr.aria-label]="plainHeadline()">
+      @for (word of headline(); track $index) {
+        <span class="mask" aria-hidden="true"
+          ><span class="word" [class.gradient-text]="word.accent" [style.--i]="$index">{{ word.text }}</span></span
+        >
+        {{ ' ' }}
+      }
+    </h1>
+
+    <p class="lead fx fx--3">{{ hero().lead }}</p>
+
+    <div class="actions fx fx--4">
+      <a class="btn btn--primary" href="#work" (click)="scrollTo($event, 'work')">
+        {{ hero().ctaWork }}
+        <app-icon name="arrow-down" />
+      </a>
+      <a class="btn btn--ghost" href="#contact" (click)="scrollTo($event, 'contact')">
+        {{ hero().ctaContact }}
+        <app-icon name="arrow-up-right" />
+      </a>
+    </div>
+  </div>
+
+  <div class="hero__visual fx fx--2" appTilt="7">
+    <div class="ring"></div>
+    <div class="portrait">
+      <img
+        src="assets/pictures/portrait.jpg"
+        [alt]="name"
+        width="720"
+        height="720"
+        fetchpriority="high"
+      />
+    </div>
+    @for (chip of chips; track chip; let i = $index) {
+      <span class="chip float" [class]="'float--' + i">
+        <span class="chip__dot"></span>{{ chip }}
+      </span>
+    }
+  </div>
+
+  <a class="cue fx fx--5" href="#about" (click)="scrollTo($event, 'about')">
+    <span>{{ hero().scroll }}</span>
+    <span class="cue__line"></span>
+  </a>
+</section>

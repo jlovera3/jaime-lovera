@@ -1,0 +1,21 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true" class="blue-background">
+  <div class="p-5 grid justify-center items-center sm:flex sm:justify-around sm:pt-20 sm:px-10">
+    @for (company of companies; track company.name) {
+      <ion-card
+        button
+        class="animate-fade-left w-80 text-center flex justify-center items-center my-2 h-28"
+        [attr.aria-label]="company.name + ' - ' + company.role"
+        (click)="openDetails(company)"
+      >
+        <ion-card-content class="p-0 text-center flex justify-center items-center">
+          <img
+            [src]="'assets/companies/' + company.logo + '.png'"
+            [alt]="company.name"
+            class="max-w-[60%] max-h-auto"
+          />
+        </ion-card-content>
+      </ion-card>
+    }
+  </div>
+</ion-content>

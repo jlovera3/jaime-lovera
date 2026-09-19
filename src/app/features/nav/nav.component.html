@@ -1,0 +1,62 @@
+<header class="bar">
+  <nav class="pill" [attr.aria-label]="content().a11y.primaryNav">
+    <a class="brand" href="#top" (click)="go($event, 'top')" aria-label="Jaime Lovera">
+      <span class="brand__mark">JL</span>
+    </a>
+
+    <ul class="links">
+      @for (item of items(); track item.id) {
+        <li>
+          <a
+            [href]="'#' + item.id"
+            [class.is-active]="active() === item.id"
+            [attr.aria-current]="active() === item.id ? 'true' : null"
+            (click)="go($event, item.id)"
+          >
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <div class="lang" role="group" [attr.aria-label]="content().a11y.language" [class.is-es]="language.lang() === 'es'">
+      <span class="lang__thumb"></span>
+      @for (code of language.available; track code) {
+        <button
+          type="button"
+          [attr.aria-pressed]="language.lang() === code"
+          [attr.lang]="code"
+          (click)="language.set(code)"
+        >
+          {{ code }}
+        </button>
+      }
+    </div>
+
+    <button
+      type="button"
+      class="burger"
+      [attr.aria-label]="menuOpen() ? content().a11y.closeMenu : content().a11y.openMenu"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="mobile-menu"
+      (click)="toggleMenu()"
+    >
+      <app-icon [name]="menuOpen() ? 'close' : 'menu'" />
+    </button>
+  </nav>
+</header>
+
+@if (menuOpen()) {
+  <div id="mobile-menu" class="sheet" animate.enter="sheet-in" animate.leave="sheet-out">
+    <ul>
+      @for (item of items(); track item.id; let i = $index) {
+        <li [style.--i]="i">
+          <a [href]="'#' + item.id" (click)="go($event, item.id)">
+            <span class="sheet__index">0{{ i + 1 }}</span>
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+}

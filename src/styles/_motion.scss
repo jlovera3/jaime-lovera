@@ -1,0 +1,65 @@
+// Shared motion primitives. Everything here is disabled for users who prefer reduced motion.
+
+@media (prefers-reduced-motion: no-preference) {
+  // Scroll-reveal (see RevealDirective)
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+    filter: blur(6px);
+    transition:
+      opacity 0.9s var(--ease-out),
+      transform 0.9s var(--ease-out),
+      filter 0.9s var(--ease-out);
+    transition-delay: calc(var(--reveal-delay, 0) * 1ms);
+
+    &.is-visible {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+  }
+
+  // Tilt (see TiltDirective)
+  .tilt {
+    transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: transform 0.5s var(--ease-out);
+    transform-style: preserve-3d;
+
+    &.is-tilting {
+      transition: transform 0.08s linear;
+    }
+  }
+
+  // Reading progress: a hairline at the top, driven purely by scroll position (CSS only)
+  @supports (animation-timeline: scroll()) {
+    .scroll-progress {
+      animation: scroll-progress linear both;
+      animation-timeline: scroll(root);
+    }
+  }
+}
+
+@keyframes scroll-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+}

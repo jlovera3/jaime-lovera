@@ -1,0 +1,230 @@
+:host {
+  display: block;
+}
+
+.bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  padding: 1rem var(--gutter) 0;
+  pointer-events: none;
+}
+
+.pill {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem;
+  width: 100%;
+  max-width: max-content;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: rgb(10 10 16 / 0.55);
+  backdrop-filter: blur(18px) saturate(1.4);
+  box-shadow: 0 10px 40px -10px rgb(0 0 0 / 0.6);
+  // Entrance: slides down once the splash curtain opens
+  opacity: 0;
+  transform: translateY(-140%);
+  transition:
+    opacity 0.8s var(--ease-out) 0.7s,
+    transform 0.9s var(--ease-out) 0.7s,
+    background-color 0.4s,
+    border-color 0.4s;
+}
+
+:host(.is-ready) .pill {
+  opacity: 1;
+  transform: none;
+}
+
+:host(.is-scrolled) .pill {
+  background: rgb(10 10 16 / 0.78);
+  border-color: var(--border-strong);
+}
+
+.brand {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: #06060a;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: -0.02em;
+  transition: transform 0.5s var(--ease-spring);
+
+  &:hover {
+    transform: rotate(-8deg) scale(1.08);
+  }
+}
+
+.links {
+  display: none;
+  align-items: center;
+  gap: 0.15rem;
+  margin-inline: 0.5rem;
+
+  a {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    transition:
+      color 0.3s,
+      background-color 0.3s;
+
+    &:hover {
+      color: var(--text);
+    }
+    &.is-active {
+      color: var(--text);
+      background: var(--surface-hover);
+    }
+  }
+}
+
+// Segmented EN | ES control with a sliding thumb
+.lang {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: auto;
+  padding: 0.2rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  border: 1px solid var(--border);
+
+  button {
+    position: relative;
+    z-index: 1;
+    padding: 0.3rem 0.65rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.3s;
+
+    &[aria-pressed='true'] {
+      color: #06060a;
+    }
+  }
+
+  &__thumb {
+    position: absolute;
+    top: 0.2rem;
+    bottom: 0.2rem;
+    left: 0.2rem;
+    width: calc(50% - 0.2rem);
+    border-radius: var(--radius-pill);
+    background: var(--text);
+    transition: transform 0.5s var(--ease-spring);
+  }
+
+  &.is-es &__thumb {
+    transform: translateX(100%);
+  }
+}
+
+.burger {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  --icon-size: 1.2rem;
+}
+
+// Mobile menu sheet
+.sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  align-content: center;
+  padding: 5rem var(--gutter) 2rem;
+  background: rgb(6 6 10 / 0.94);
+  backdrop-filter: blur(24px);
+
+  ul {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  li {
+    animation: sheet-item 0.7s var(--ease-out) both;
+    animation-delay: calc(0.08s + var(--i) * 60ms);
+  }
+
+  a {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    font-size: clamp(2rem, 9vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  &__index {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+}
+
+.sheet.sheet-in {
+  animation: sheet-in 0.5s var(--ease-out);
+}
+
+.sheet.sheet-out {
+  animation: sheet-out 0.35s var(--ease-in-out) forwards;
+}
+
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    clip-path: circle(0% at calc(100% - 2.5rem) 2.5rem);
+  }
+  to {
+    opacity: 1;
+    clip-path: circle(150% at calc(100% - 2.5rem) 2.5rem);
+  }
+}
+
+@keyframes sheet-out {
+  to {
+    opacity: 0;
+    clip-path: circle(0% at calc(100% - 2.5rem) 2.5rem);
+  }
+}
+
+@keyframes sheet-item {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@media (min-width: 900px) {
+  .links {
+    display: flex;
+  }
+  .lang {
+    margin-left: 0.25rem;
+  }
+  .burger,
+  .sheet {
+    display: none;
+  }
+}

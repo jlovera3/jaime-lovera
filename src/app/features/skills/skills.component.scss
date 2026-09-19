@@ -1,0 +1,68 @@
+.bento {
+  display: grid;
+  gap: 1rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.75rem;
+
+  &:hover {
+    border-color: var(--border-strong);
+  }
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+h3 {
+  margin-top: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+header p {
+  margin-top: 0.4rem;
+  max-width: 26rem;
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  color: var(--text);
+  background: rgb(255 255 255 / 0.045);
+}
+
+// 6-column bento on larger screens: frontend is the wide tile, the rest share the remaining rows
+@media (min-width: 900px) {
+  .bento {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .group--frontend {
+    grid-column: span 4;
+  }
+  .group--mobile,
+  .group--backend,
+  .group--data,
+  .group--craft {
+    grid-column: span 2;
+  }
+  .group--craft {
+    grid-column: span 2;
+  }
+}

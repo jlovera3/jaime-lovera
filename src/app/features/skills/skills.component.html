@@ -1,0 +1,25 @@
+<section id="skills" class="section container">
+  <app-section-heading
+    index="04"
+    [eyebrow]="text().eyebrow"
+    [title]="text().title"
+    [subtitle]="text().subtitle"
+  />
+
+  <div class="bento">
+    @for (group of groups(); track group.id; let i = $index) {
+      <article class="card group" [class]="'group--' + group.id" appSpotlight [appReveal]="i * 90">
+        <header>
+          <span class="num">0{{ i + 1 }}</span>
+          <h3>{{ group.title }}</h3>
+          <p>{{ group.description }}</p>
+        </header>
+        <ul>
+          @for (item of group.items; track item) {
+            <li class="chip">{{ item }}</li>
+          }
+        </ul>
+      </article>
+    }
+  </div>
+</section>

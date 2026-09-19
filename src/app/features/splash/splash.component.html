@@ -1,0 +1,28 @@
+<div class="splash" [class.is-exiting]="exiting()" role="status" [attr.aria-label]="name">
+  <div class="panel panel--top"></div>
+  <div class="panel panel--bottom"></div>
+
+  <div class="stage" aria-hidden="true">
+    <span class="glow"></span>
+    <h1 class="name">
+      @for (word of words; track $index) {
+        <span class="word">
+          @for (letter of word; track letter.index) {
+            <span class="char" [style.--i]="letter.index">{{ letter.char }}</span>
+          }
+        </span>
+      }
+    </h1>
+    <p class="role">{{ content().splash.role }}</p>
+  </div>
+
+  <div class="meter" aria-hidden="true">
+    <div class="bar"><i [style.transform]="'scaleX(' + count() / 100 + ')'"></i></div>
+    <div class="meter__row">
+      <span class="count">{{ count().toString().padStart(3, '0') }}</span>
+      <span class="tag">Portfolio · {{ year }}</span>
+    </div>
+  </div>
+
+  <button type="button" class="skip" (click)="skip()">{{ content().splash.skip }}</button>
+</div>

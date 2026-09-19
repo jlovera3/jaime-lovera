@@ -1,0 +1,143 @@
+// Small building blocks shared by several features. Anything used once lives in its component.
+
+.container {
+  width: min(100% - 2 * var(--gutter), var(--max-w));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-space);
+  position: relative;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+// Buttons
+.btn {
+  --btn-pad-y: 0.85rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: var(--btn-pad-y) 1.4rem;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1;
+  isolation: isolate;
+  transition:
+    transform 0.4s var(--ease-out),
+    background-color 0.3s,
+    border-color 0.3s,
+    box-shadow 0.4s;
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  .icon {
+    transition: transform 0.4s var(--ease-out);
+  }
+
+  &:hover .icon {
+    transform: translate(2px, -2px);
+  }
+
+  &--primary {
+    color: #06060a;
+    background: var(--text);
+    box-shadow: 0 0 0 0 var(--accent-glow);
+
+    &:hover {
+      box-shadow: 0 8px 40px -6px var(--accent-glow);
+      transform: translateY(-2px);
+    }
+  }
+
+  &--ghost {
+    color: var(--text);
+    border: 1px solid var(--border-strong);
+    background: var(--surface);
+    backdrop-filter: blur(10px);
+
+    &:hover {
+      background: var(--surface-hover);
+      border-color: rgb(255 255 255 / 0.3);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  transition:
+    color 0.3s,
+    border-color 0.3s,
+    background-color 0.3s;
+
+  &:hover {
+    color: var(--text);
+    border-color: var(--border-strong);
+  }
+}
+
+// Card with a cursor-following glow (see SpotlightDirective)
+.card {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, rgb(255 255 255 / 0.05), rgb(255 255 255 / 0.015));
+  transition:
+    border-color 0.4s,
+    transform 0.5s var(--ease-out);
+}
+
+.spotlight {
+  --mx: 50%;
+  --my: 50%;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(
+      420px circle at var(--mx) var(--my),
+      rgb(139 140 255 / 0.13),
+      transparent 65%
+    );
+    transition: opacity 0.4s;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}

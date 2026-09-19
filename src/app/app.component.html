@@ -1,0 +1,30 @@
+<a class="skip-link" href="#main">{{ content().a11y.skipToContent }}</a>
+
+<div class="backdrop" aria-hidden="true">
+  <span class="orb orb--a"></span>
+  <span class="orb orb--b"></span>
+  <span class="orb orb--c"></span>
+  <span class="grid"></span>
+  <span class="noise"></span>
+</div>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+@if (intro.stage() !== 'done') {
+  <app-splash />
+}
+
+<!-- While the splash plays, the page underneath is inert (no focus, no screen-reader noise) -->
+<div [attr.inert]="intro.stage() === 'playing' ? '' : null">
+  <app-nav />
+  <main id="main">
+    <app-hero />
+    <app-marquee />
+    <app-about />
+    <app-experience />
+    <app-work />
+    <app-skills />
+    <app-contact />
+  </main>
+  <app-footer />
+</div>

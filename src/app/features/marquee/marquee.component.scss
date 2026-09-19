@@ -1,0 +1,61 @@
+:host {
+  display: block;
+  padding-block: 1.5rem;
+  border-block: 1px solid var(--border);
+  background: linear-gradient(180deg, transparent, rgb(255 255 255 / 0.015), transparent);
+}
+
+.marquee {
+  display: grid;
+  gap: 1rem;
+  overflow: hidden;
+  mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.row {
+  display: flex;
+  width: max-content;
+  animation: scroll 42s linear infinite;
+
+  &--reverse {
+    animation-direction: reverse;
+    animation-duration: 50s;
+  }
+}
+
+:host(:hover) .row {
+  animation-play-state: paused;
+}
+
+.track {
+  display: flex;
+  flex: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text-subtle);
+  white-space: nowrap;
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--text);
+  }
+}
+
+.star {
+  font-size: 0.6em;
+  color: var(--accent);
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}

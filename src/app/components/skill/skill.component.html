@@ -1,0 +1,16 @@
+<div class="skill-container">
+  <ion-icon [src]="skill().icon" class="m-2 h-8 w-8"></ion-icon>
+  <div class="label-progress-container">
+    <label class="tech-label">{{ skill().name }}</label>
+    <div
+      class="progress-bar-container"
+      role="progressbar"
+      [attr.aria-label]="skill().name"
+      [attr.aria-valuenow]="skill().percentage"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <div class="progress-bar" [style.width]="progressWidth()"></div>
+    </div>
+  </div>
+</div>
