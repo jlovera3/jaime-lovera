@@ -8,9 +8,8 @@ export interface AppProject {
   name: string;
   /** Client shown under the name when it differs from the employer */
   client?: string;
+  /** Square icon */
   logo: string;
-  /** Wordmarks that are much wider than tall are shown as a banner instead of a square icon */
-  wideLogo?: boolean;
   googleUrl?: string;
   appleUrl?: string;
   webUrl?: string;

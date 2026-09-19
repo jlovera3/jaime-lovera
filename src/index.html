@@ -17,16 +17,36 @@
     <meta name="twitter:card" content="summary" />
 
     <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+    <link rel="canonical" href="https://jaime-lovera.pages.dev/" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jaime Lovera",
+        "jobTitle": "Frontend Engineer & Technical Project Lead",
+        "url": "https://jaime-lovera.pages.dev/",
+        "sameAs": ["https://www.linkedin.com/in/jaime-lovera/", "https://github.com/jlovera3"],
+        "worksFor": { "@type": "Organization", "name": "knowmad mood", "url": "https://www.knowmadmood.com/" }
+      }
+    </script>
 
     <style>
       /* Paint the dark background before the bundle loads to avoid a white flash */
       html { background: #06060a; }
+      .boot { position: fixed; inset: 0; margin: auto; animation: boot 1.4s ease-in-out infinite; }
+      @keyframes boot { 50% { opacity: 0.35; transform: scale(0.8); } }
     </style>
   </head>
   <body>
-    <app-root></app-root>
+    <app-root>
+      <!-- Painted before Angular boots; replaced by the app on bootstrap -->
+      <svg class="boot" width="56" height="56" viewBox="0 0 56 56" aria-hidden="true">
+        <circle cx="28" cy="28" r="7" fill="#8b8cff" />
+      </svg>
+    </app-root>
     <noscript>Jaime Lovera — Frontend Engineer &amp; Technical Project Lead. Please enable JavaScript to view this portfolio.</noscript>
   </body>
 </html>

@@ -43,14 +43,26 @@
   .panel--bottom {
     transform: translateY(101%);
   }
+  // Once faded out they are also hidden, so they never count as (invisible) text for assistive tech or audits
   .stage {
     opacity: 0;
     transform: scale(0.94);
     filter: blur(10px);
+    visibility: hidden;
+    transition:
+      opacity 0.5s var(--ease-out),
+      transform 0.7s var(--ease-out),
+      filter 0.5s,
+      visibility 0s 0.5s;
   }
   .meter {
     opacity: 0;
     transform: translateY(12px);
+    visibility: hidden;
+    transition:
+      opacity 0.4s,
+      transform 0.5s var(--ease-out),
+      visibility 0s 0.4s;
   }
 }
 
