@@ -166,5 +166,17 @@ export const ES: Content = {
     copied: '¡Copiado!',
     write: 'Escríbeme',
   },
+  cv: {
+    profile: 'Perfil',
+    summary:
+      'Ingeniero frontend y jefe de proyecto técnico que crea y publica productos web y móviles, desde apps en App Store y Google Play hasta plataformas web corporativas. Hoy lidero la entrega técnica de un gran programa de seguros: coordino ingenieros, gestiono la entrega y participo en decisiones de arquitectura. Me importan la arquitectura limpia, el rendimiento y los detalles que hacen que un producto se sienta bien.',
+    experience: 'Experiencia',
+    skills: 'Skills',
+    education: 'Formación',
+    engagements: 'Proyectos para clientes',
+    stack: 'Stack',
+    selectedApps: 'Apps destacadas',
+    download: 'Descargar CV',
+  },
   footer: { built: 'Diseñado y desarrollado por Jaime Lovera' },
 };

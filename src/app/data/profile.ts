@@ -3,6 +3,7 @@ import { Profile } from './data.model';
 export const PROFILE: Profile = {
   name: 'Jaime Lovera',
   email: 'jloveraulecia@gmail.com',
+  website: 'https://jaime-lovera.pages.dev',
   careerStart: '2020-09',
   links: [
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/jaime-lovera/' },

@@ -10,6 +10,7 @@ npm install
 npm start          # http://localhost:4200  (add ?intro to replay the splash)
 npm test           # unit tests (Vitest)
 npm run build      # production build in www/
+npm run cv         # regenerate the CV PDFs (see below)
 ```
 
 ## Where things live
@@ -28,6 +29,18 @@ src/styles/   design tokens and global styles
 - **Edit facts** (jobs, apps, skills, links): `src/app/data/`.
 - **Add LinkedIn / GitHub:** fill `links` in `src/app/data/profile.ts`; the UI picks it up.
 - **Design tokens:** `src/styles/_tokens.scss`.
+
+## CV (PDF)
+
+The downloadable CV is generated from the same data and copy as the site, in English and Spanish,
+so it never drifts out of sync. A print-optimised page lives at `/?cv=en` and `/?cv=es`.
+
+```bash
+npm run cv    # builds the app and writes src/assets/cv/Jaime-Lovera-CV-{en,es}.pdf
+```
+
+Run it whenever you change `src/app/content/` or `src/app/data/`, then commit the PDFs.
+It needs Google Chrome or Chromium (set `CHROME_PATH` if it is not in a standard location).
 
 ## Deploy
 

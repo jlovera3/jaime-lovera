@@ -80,5 +80,16 @@ export interface Content {
     copied: string;
     write: string;
   };
+  cv: {
+    profile: string;
+    summary: string;
+    experience: string;
+    skills: string;
+    education: string;
+    engagements: string;
+    stack: string;
+    selectedApps: string;
+    download: string;
+  };
   footer: { built: string };
 }

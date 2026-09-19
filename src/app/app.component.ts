@@ -2,7 +2,9 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { IntroService } from './core/intro/intro.service';
 import { LanguageService } from './core/i18n/language.service';
 import { AboutComponent } from './features/about/about.component';
+import { cvLang } from './core/print/cv-mode';
 import { ContactComponent } from './features/contact/contact.component';
+import { CvComponent } from './features/cv/cv.component';
 import { ExperienceComponent } from './features/experience/experience.component';
 import { HeroComponent } from './features/hero/hero.component';
 import { MarqueeComponent } from './features/marquee/marquee.component';
@@ -16,6 +18,7 @@ import { FooterComponent } from './shared/ui/footer.component';
   selector: 'app-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
+    CvComponent,
     SplashComponent,
     NavComponent,
     HeroComponent,
@@ -31,6 +34,8 @@ import { FooterComponent } from './shared/ui/footer.component';
   styleUrl: 'app.component.scss',
 })
 export class AppComponent {
+  /** Set when the printable CV is requested (`?cv=en|es`) */
+  protected readonly cv = cvLang();
   protected readonly intro = inject(IntroService);
   protected readonly content = inject(LanguageService).content;
 }

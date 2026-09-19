@@ -20,10 +20,13 @@ interface Word {
 })
 export class HeroComponent {
   protected readonly intro = inject(IntroService);
-  private readonly content = inject(LanguageService).content;
+  private readonly language = inject(LanguageService);
+  private readonly content = this.language.content;
+  protected readonly cvHref = this.language.cvHref;
 
   protected readonly name = PROFILE.name;
   protected readonly hero = computed(() => this.content().hero);
+  protected readonly cv = computed(() => this.content().cv);
   protected readonly chips = ['Angular', 'TypeScript', 'Ionic', 'Vue.js'];
 
   protected readonly headline = computed(() => {

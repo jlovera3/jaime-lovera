@@ -1,0 +1,88 @@
+<article class="cv">
+  <header class="head">
+    <h1>{{ name }}</h1>
+    <p class="role">{{ t().hero.eyebrow }}</p>
+    <ul class="contact">
+      @for (item of contact(); track item.href) {
+        <li><a [href]="item.href">{{ item.label }}</a></li>
+      }
+    </ul>
+  </header>
+
+  <section>
+    <h2>{{ t().cv.profile }}</h2>
+    <p class="summary">{{ t().cv.summary }}</p>
+  </section>
+
+  <section>
+    <h2>{{ t().cv.experience }}</h2>
+    @for (job of jobs(); track job.id) {
+      <div class="job">
+        <div class="row">
+          <h3>
+            {{ job.role }} <span class="at">· {{ job.name }}</span>
+          </h3>
+          <span class="when">{{ job.period }}</span>
+        </div>
+        <ul class="bullets">
+          @for (line of job.highlights; track line) {
+            <li>{{ line }}</li>
+          }
+        </ul>
+
+        @if (job.engagements.length) {
+          <div class="engagements">
+            @for (eng of job.engagements; track eng.id) {
+              <div class="engagement">
+                <div class="row">
+                  <h4>
+                    {{ eng.client }} <span class="at">· {{ eng.title }}</span>
+                  </h4>
+                  @if (eng.period) {
+                    <span class="when">{{ eng.period }}</span>
+                  }
+                </div>
+                <ul class="bullets">
+                  @for (point of eng.points; track point) {
+                    <li>{{ point }}</li>
+                  }
+                </ul>
+              </div>
+            }
+          </div>
+        }
+
+        @if (job.stack) {
+          <p class="meta"><b>{{ t().cv.stack }}:</b> {{ job.stack.join(' · ') }}</p>
+        }
+        @if (job.apps) {
+          <p class="meta"><b>{{ t().cv.selectedApps }}:</b> {{ job.apps }}</p>
+        }
+      </div>
+    }
+  </section>
+
+  <section class="cols">
+    <div>
+      <h2>{{ t().cv.skills }}</h2>
+      <dl class="skills">
+        @for (group of skills(); track group.title) {
+          <dt>{{ group.title }}</dt>
+          <dd>{{ group.items }}</dd>
+        }
+      </dl>
+    </div>
+    <div>
+      <h2>{{ t().cv.education }}</h2>
+      @for (entry of education; track entry.id) {
+        <div class="edu">
+          <div class="row">
+            <h3>{{ t().about.education[entry.id] }}</h3>
+            <span class="when">{{ entry.start }} — {{ entry.end }}</span>
+          </div>
+          <p class="meta">{{ entry.place }}</p>
+        </div>
+      }
+    </div>
+  </section>
+</article>

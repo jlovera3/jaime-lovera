@@ -1,6 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Injectable, computed, effect, inject, signal } from '@angular/core';
 import { MotionService } from '../motion/motion.service';
+import { cvLang } from '../print/cv-mode';
 
 const SEEN_KEY = 'intro-seen';
 
@@ -40,7 +41,7 @@ export class IntroService {
 
   /** Plays once per session; `?intro` in the URL forces it (handy while iterating on the animation). */
   private shouldPlay(): boolean {
-    if (inject(MotionService).reduced()) return false;
+    if (cvLang() || inject(MotionService).reduced()) return false;
     if (location.search.includes('intro')) return true;
     try {
       return !sessionStorage.getItem(SEEN_KEY);

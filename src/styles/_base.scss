@@ -116,3 +116,14 @@ button {
     transform: none;
   }
 }
+
+// Printable CV (?cv=en | ?cv=es): plain white sheet, no site chrome
+html.cv-mode,
+html.cv-mode body {
+  background: #fff;
+}
+
+@page {
+  size: A4;
+  margin: 13mm 15mm;
+}

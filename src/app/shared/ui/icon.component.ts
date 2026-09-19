@@ -10,7 +10,8 @@ export type IconName =
   | 'map-pin'
   | 'menu'
   | 'close'
-  | 'external';
+  | 'external'
+  | 'download';
 
 // Stroke icons in the Lucide style (24×24 grid, round joins)
 const PATHS: Record<IconName, string[]> = {
@@ -23,6 +24,7 @@ const PATHS: Record<IconName, string[]> = {
   'map-pin': ['M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z', 'M12 7a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z'],
   menu: ['M4 6h16', 'M4 12h16', 'M4 18h16'],
   close: ['M18 6 6 18', 'm6 6 12 12'],
+  download: ['M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4', 'm7 10 5 5 5-5', 'M12 15V3'],
   external: ['M15 3h6v6', 'M10 14 21 3', 'M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'],
 };
 

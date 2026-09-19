@@ -60,6 +60,8 @@ export interface EducationEntry {
 export interface Profile {
   name: string;
   email: string;
+  /** Public URL of the portfolio, printed on the CV */
+  website: string;
   /** Month the professional career started (ISO year-month); drives "years of experience" */
   careerStart: string;
   /** Optional links: sections hide themselves when empty */

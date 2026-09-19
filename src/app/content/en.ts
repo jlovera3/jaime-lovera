@@ -166,5 +166,17 @@ export const EN: Content = {
     copied: 'Copied!',
     write: 'Write me',
   },
+  cv: {
+    profile: 'Profile',
+    summary:
+      'Frontend engineer and technical project lead building and shipping web and mobile products, from apps in the App Store and Google Play to enterprise web platforms. Today I lead technical delivery on a large insurance programme: coordinating engineers, managing delivery and contributing to architecture decisions. I care about clean architecture, performance and the details that make a product feel right.',
+    experience: 'Experience',
+    skills: 'Skills',
+    education: 'Education',
+    engagements: 'Client engagements',
+    stack: 'Stack',
+    selectedApps: 'Selected apps',
+    download: 'Download CV',
+  },
   footer: { built: 'Designed & built by Jaime Lovera' },
 };

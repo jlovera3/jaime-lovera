@@ -12,6 +12,10 @@
         <app-icon [name]="copied() ? 'check' : 'copy'" />
         <span aria-live="polite">{{ copied() ? text().copied : text().copy }}</span>
       </button>
+      <a class="btn btn--ghost" [href]="cvHref()" download>
+        <app-icon name="download" />
+        {{ cv().download }}
+      </a>
     </div>
 
     <p class="address">{{ email }}</p>

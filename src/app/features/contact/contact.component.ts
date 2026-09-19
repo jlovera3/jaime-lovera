@@ -14,6 +14,8 @@ import { SectionHeadingComponent } from '../../shared/ui/section-heading.compone
 })
 export class ContactComponent {
   private readonly language = inject(LanguageService);
+  protected readonly cvHref = this.language.cvHref;
+  protected readonly cv = computed(() => this.language.content().cv);
   protected readonly text = computed(() => this.language.content().contact);
   protected readonly email = PROFILE.email;
   protected readonly links = PROFILE.links;
