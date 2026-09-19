@@ -8,9 +8,9 @@ export interface AppProject {
   name: string;
   /** Client shown under the name when it differs from the employer */
   client?: string;
-  /** Square icon. Without one, the card falls back to a `monogram` tile */
-  logo?: string;
-  monogram?: string;
+  logo: string;
+  /** Wordmarks that are much wider than tall are shown as a banner instead of a square icon */
+  wideLogo?: boolean;
   googleUrl?: string;
   appleUrl?: string;
   webUrl?: string;

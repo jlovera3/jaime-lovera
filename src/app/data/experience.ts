@@ -26,21 +26,46 @@ export const COMPANIES: Company[] = [
     projects: [
       {
         id: 'regal-autos',
-        name: 'Regal Autos',
-        client: 'Generali',
+        name: 'Regal',
+        client: 'Generali · Car, home & more',
         logo: 'assets/projects/regal-app.svg',
         webUrl: 'https://tarificador-coche.regal.es/webapps/omnichannel-regal/#/autos/questions/insurance-start',
       },
       {
         id: 'genesis-autos',
-        name: 'Genesis Autos',
-        client: 'Generali',
+        name: 'Genesis',
+        client: 'Generali · Car, home & more',
         logo: 'assets/projects/genesis-app.svg',
         webUrl:
           'https://tarificador-coche.genesis.es/webapps/omnichannel-genesis/#/autos/questions/insurance-start',
       },
-      { id: 'nodus', name: 'Nodus', client: 'Port operations · Montevideo', monogram: 'N' },
-      { id: 'appxdata', name: 'AppXData', client: 'Ofiteco', monogram: 'AX' },
+      {
+        id: 'octopus',
+        name: 'Octopus',
+        client: 'Nodus · Port of Montevideo',
+        logo: 'assets/projects/octopus.png',
+      },
+      {
+        id: 'bridgedata',
+        name: 'BridgeData',
+        client: 'Ofiteco',
+        logo: 'assets/projects/bridgedata.png',
+        wideLogo: true,
+      },
+      {
+        id: 'tunneldata',
+        name: 'TunnelData',
+        client: 'Ofiteco',
+        logo: 'assets/projects/tunneldata.png',
+        wideLogo: true,
+      },
+      {
+        id: 'damdata',
+        name: 'DamData',
+        client: 'Ofiteco',
+        logo: 'assets/projects/damdata.png',
+        wideLogo: true,
+      },
     ],
   },
   {

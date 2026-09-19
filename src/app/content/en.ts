@@ -106,22 +106,22 @@ export const EN: Content = {
       generali: {
         title: 'Digital insurance journeys · Regal & Genesis',
         points: [
-          'Transformation of the self-service car-insurance quote and purchase journey for Generali’s Regal and Genesis brands.',
+          'Transformation of the self-service insurance journeys (car, home and more) for Generali’s Regal and Genesis brands.',
           'Since June 2026, technical project lead: planning and delivery across teams and day-to-day coordination of a team of MuleSoft integration developers.',
           'Contributing to architecture decisions on a large enterprise backend-integration programme.',
         ],
       },
       nodus: {
-        title: 'Port operations platform',
+        title: 'Octopus · Port operations platform',
         points: [
           'Internal management web platform for port operations in Montevideo: vessel and container reception, payments, invoicing and document generation.',
           'My first step from mobile into large-scale web applications, built with Angular.',
         ],
       },
       ofiteco: {
-        title: 'AppXData · Infrastructure monitoring app',
+        title: 'AppXData · BridgeData, TunnelData & DamData',
         points: [
-          'Field app that lets operators take sensor readings on bridges, tunnels and dams so maintenance can be planned and infrastructure kept in good condition.',
+          'Field apps that let operators take sensor readings on bridges, tunnels and dams so maintenance can be planned and infrastructure kept in good condition.',
           'Upgraded it from an early Angular version to the latest release and migrated it from Cordova to Capacitor.',
           'Delivered end to end as the only developer, right after joining the company.',
         ],

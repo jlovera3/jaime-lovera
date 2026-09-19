@@ -106,22 +106,22 @@ export const ES: Content = {
       generali: {
         title: 'Journeys digitales de seguros · Regal y Genesis',
         points: [
-          'Transformación del proceso de autocontratación de seguros de coche de las marcas Regal y Genesis de Generali.',
+          'Transformación de los procesos de autocontratación de seguros (coche, hogar y más) de las marcas Regal y Genesis de Generali.',
           'Desde junio de 2026, jefe de proyecto técnico: planificación y entrega entre equipos y coordinación diaria de un equipo de desarrolladores de integración MuleSoft.',
           'Participación en decisiones de arquitectura de un gran programa corporativo de integración de backend.',
         ],
       },
       nodus: {
-        title: 'Plataforma de operaciones portuarias',
+        title: 'Octopus · Plataforma de operaciones portuarias',
         points: [
           'Plataforma web de gestión interna para las operaciones del puerto de Montevideo: recepción de buques y contenedores, pagos, facturación y generación de documentos.',
           'Mi primer paso del móvil a aplicaciones web de gran escala, construida con Angular.',
         ],
       },
       ofiteco: {
-        title: 'AppXData · App de monitorización de infraestructuras',
+        title: 'AppXData · BridgeData, TunnelData y DamData',
         points: [
-          'App de campo con la que los operarios toman lecturas de sensores en puentes, túneles y presas para planificar el mantenimiento y mantener las infraestructuras en buen estado.',
+          'Apps de campo con las que los operarios toman lecturas de sensores en puentes, túneles y presas para planificar el mantenimiento y mantener las infraestructuras en buen estado.',
           'La actualicé desde una de las primeras versiones de Angular a la última y la migré de Cordova a Capacitor.',
           'Entregada de principio a fin como único desarrollador, nada más incorporarme a la empresa.',
         ],
