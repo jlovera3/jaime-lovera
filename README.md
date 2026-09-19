@@ -31,5 +31,14 @@ src/styles/   design tokens and global styles
 
 ## Deploy
 
-Every push to `main` builds and publishes to GitHub Pages via `.github/workflows/deploy.yml`.
-One-time setup: repository **Settings → Pages → Source: GitHub Actions**.
+Hosted on Cloudflare Pages (free tier), connected to this repository: every push to `main` builds and
+publishes automatically.
+
+| Setting | Value |
+|---|---|
+| Build command | `npm run build` |
+| Build output directory | `www` |
+| Node version | `24` (from `.node-version`) |
+
+Security and cache headers live in `src/_headers`. GitHub Actions (`.github/workflows/ci.yml`) runs lint,
+tests and a production build on every push and pull request.

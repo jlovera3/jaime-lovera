@@ -1,8 +1,7 @@
 {
-  "name": "jaimes-cv-app-angular",
+  "name": "jaime-lovera",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Jaime Lovera",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -48,5 +47,5 @@
     "typescript-eslint": "^8.61.0",
     "vitest": "~4.0.18"
   },
-  "description": "An Ionic project"
+  "description": "Personal portfolio and CV: animated, bilingual (EN/ES) Angular app"
 }
