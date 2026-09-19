@@ -53,6 +53,7 @@ export interface Content {
     units: DurationUnits;
     companies: Record<CompanyId, { role: string; highlights: string[] }>;
     engagementsTitle: string;
+    support: string;
     engagements: Record<EngagementId, { title: string; points: string[] }>;
   };
   work: {

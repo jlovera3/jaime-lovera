@@ -102,6 +102,7 @@ export const ES: Content = {
       },
     },
     engagementsTitle: 'Proyectos para clientes',
+    support: 'Soporte continuo',
     engagements: {
       generali: {
         title: 'Journeys digitales de seguros · Regal y Genesis',
@@ -116,6 +117,7 @@ export const ES: Content = {
         points: [
           'Plataforma web de gestión interna para las operaciones del puerto de Montevideo: recepción de buques y contenedores, pagos, facturación y generación de documentos.',
           'Mi primer paso del móvil a aplicaciones web de gran escala, construida con Angular.',
+          'A jornada completa desde julio de 2025 mientras mantenía AppXData al 50 %, y sigo dando soporte hoy junto a mi rol en Generali.',
         ],
       },
       ofiteco: {
@@ -123,7 +125,7 @@ export const ES: Content = {
         points: [
           'Apps de campo con las que los operarios toman lecturas de sensores en puentes, túneles y presas para planificar el mantenimiento y mantener las infraestructuras en buen estado.',
           'La actualicé desde una de las primeras versiones de Angular a la última y la migré de Cordova a Capacitor.',
-          'Entregada de principio a fin como único desarrollador, nada más incorporarme a la empresa.',
+          'Entregadas de principio a fin como único desarrollador: a jornada completa de abril a junio de 2025 y después al 50 % mientras empezaba con Octopus. Sigo dando soporte hoy.',
         ],
       },
     },

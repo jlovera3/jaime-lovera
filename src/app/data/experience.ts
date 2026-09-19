@@ -20,8 +20,15 @@ export const COMPANIES: Company[] = [
         start: '2025-11',
         end: null,
       },
-      { id: 'nodus', client: 'Nodus' },
-      { id: 'ofiteco', client: 'Ofiteco', url: 'https://www.ofiteco.com/' },
+      { id: 'nodus', client: 'Nodus', start: '2025-07', end: '2025-11', support: true },
+      {
+        id: 'ofiteco',
+        client: 'Ofiteco',
+        url: 'https://www.ofiteco.com/',
+        start: '2025-04',
+        end: '2025-06',
+        support: true,
+      },
     ],
     projects: [
       {

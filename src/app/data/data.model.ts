@@ -24,6 +24,8 @@ export interface Engagement {
   /** ISO year-month; both omitted when the dates are not public */
   start?: string;
   end?: string | null;
+  /** Still maintained today, alongside the current role */
+  support?: boolean;
 }
 
 export interface Company {

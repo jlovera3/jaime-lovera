@@ -102,6 +102,7 @@ export const EN: Content = {
       },
     },
     engagementsTitle: 'Client engagements',
+    support: 'Ongoing support',
     engagements: {
       generali: {
         title: 'Digital insurance journeys · Regal & Genesis',
@@ -116,6 +117,7 @@ export const EN: Content = {
         points: [
           'Internal management web platform for port operations in Montevideo: vessel and container reception, payments, invoicing and document generation.',
           'My first step from mobile into large-scale web applications, built with Angular.',
+          'Full time on it from July 2025 while keeping AppXData going at 50%, and still providing support today alongside my role at Generali.',
         ],
       },
       ofiteco: {
@@ -123,7 +125,7 @@ export const EN: Content = {
         points: [
           'Field apps that let operators take sensor readings on bridges, tunnels and dams so maintenance can be planned and infrastructure kept in good condition.',
           'Upgraded it from an early Angular version to the latest release and migrated it from Cordova to Capacitor.',
-          'Delivered end to end as the only developer, right after joining the company.',
+          'Delivered end to end as the only developer: full time from April to June 2025, then at 50% while I started on Octopus. Still providing support today.',
         ],
       },
     },

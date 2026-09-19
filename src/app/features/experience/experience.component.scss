@@ -223,6 +223,25 @@ h3 {
     gap: 0.25rem 1rem;
   }
 
+  &__meta {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.75rem;
+  }
+
+  &__support {
+    padding: 0.15rem 0.6rem;
+    border: 1px solid rgb(94 234 212 / 0.35);
+    border-radius: var(--radius-pill);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    background: rgb(94 234 212 / 0.07);
+  }
+
   &__period {
     font-family: var(--font-mono);
     font-size: 0.72rem;

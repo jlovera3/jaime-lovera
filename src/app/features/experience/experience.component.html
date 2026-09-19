@@ -62,9 +62,14 @@
                         } @else {
                           <span class="client">{{ eng.client }}</span>
                         }
-                        @if (eng.period) {
-                          <span class="engagement__period">{{ eng.period }}</span>
-                        }
+                        <span class="engagement__meta">
+                          @if (eng.support) {
+                            <span class="engagement__support">{{ text().support }}</span>
+                          }
+                          @if (eng.period) {
+                            <span class="engagement__period">{{ eng.period }}</span>
+                          }
+                        </span>
                       </div>
                       <p class="engagement__title">{{ eng.title }}</p>
                       <ul class="points">
