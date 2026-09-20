@@ -9,6 +9,15 @@
     <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#06060a" />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.dataset.theme = 'light';
+          document.querySelector('meta[name="theme-color"]').content = '#f7f7fa';
+        }
+      } catch (e) {}
+    </script>
     <meta name="format-detection" content="telephone=no" />
 
     <meta property="og:type" content="website" />
@@ -36,6 +45,7 @@
     <style>
       /* Paint the dark background before the bundle loads to avoid a white flash */
       html { background: #06060a; }
+      html[data-theme='light'] { background: #f7f7fa; }
       .boot { position: fixed; inset: 0; margin: auto; animation: boot 1.4s ease-in-out infinite; }
       @keyframes boot { 50% { opacity: 0.35; transform: scale(0.8); } }
     </style>

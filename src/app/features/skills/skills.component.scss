@@ -45,7 +45,7 @@ ul {
 
 .chip {
   color: var(--text);
-  background: rgb(255 255 255 / 0.045);
+  background: var(--surface-2);
 }
 
 // 6-column bento on larger screens: frontend is the wide tile, the rest share the remaining rows

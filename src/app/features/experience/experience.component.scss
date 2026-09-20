@@ -38,7 +38,9 @@
   &.is-open {
     border-color: var(--accent-2);
     background: var(--accent-2);
-    box-shadow: 0 0 0 5px rgb(94 234 212 / 0.15), 0 0 16px var(--accent-2);
+    box-shadow:
+      0 0 0 5px color-mix(in srgb, var(--accent-2) 15%, transparent),
+      0 0 16px var(--accent-2);
   }
 }
 
@@ -77,6 +79,7 @@ h3 {
   padding: 0.25rem;
   border-radius: var(--radius-sm);
   background: #f2f2f5;
+  border: 1px solid var(--border);
 
   img {
     width: 100%;
@@ -232,14 +235,14 @@ h3 {
 
   &__support {
     padding: 0.15rem 0.6rem;
-    border: 1px solid rgb(94 234 212 / 0.35);
+    border: 1px solid color-mix(in srgb, var(--accent-2) 35%, transparent);
     border-radius: var(--radius-pill);
     font-family: var(--font-mono);
     font-size: 0.68rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--accent-2);
-    background: rgb(94 234 212 / 0.07);
+    background: color-mix(in srgb, var(--accent-2) 8%, transparent);
   }
 
   &__period {

@@ -3,6 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { IntroService } from '../../core/intro/intro.service';
 import { LanguageService } from '../../core/i18n/language.service';
 import { MotionService } from '../../core/motion/motion.service';
+import { ThemeService } from '../../core/theme/theme.service';
 import { IconComponent } from '../../shared/ui/icon.component';
 
 export const SECTION_IDS = ['about', 'experience', 'work', 'skills', 'contact'] as const;
@@ -23,6 +24,7 @@ type SectionId = (typeof SECTION_IDS)[number];
 export class NavComponent {
   protected readonly intro = inject(IntroService);
   protected readonly language = inject(LanguageService);
+  protected readonly themeService = inject(ThemeService);
   private readonly motion = inject(MotionService);
   private readonly doc = inject(DOCUMENT);
   private readonly destroyRef = inject(DestroyRef);
@@ -69,6 +71,11 @@ export class NavComponent {
     this.closeMenu();
     const target = id === 'top' ? this.doc.body : this.doc.getElementById(id);
     target?.scrollIntoView({ behavior: this.motion.reduced() ? 'auto' : 'smooth', block: 'start' });
+  }
+
+  protected toggleTheme(event: MouseEvent) {
+    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
+    this.themeService.toggle({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
   }
 
   protected toggleMenu() {

@@ -13,6 +13,8 @@ export const EN: Content = {
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
     backToTop: 'Back to top',
+    switchToLight: 'Switch to light theme',
+    switchToDark: 'Switch to dark theme',
   },
   nav: {
     about: 'About',

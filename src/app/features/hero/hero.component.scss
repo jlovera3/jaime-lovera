@@ -98,7 +98,7 @@
 .float {
   position: absolute;
   transform: translateZ(50px);
-  background: rgb(10 10 16 / 0.7);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   color: var(--text);
   animation: float 6s ease-in-out infinite;

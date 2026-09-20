@@ -24,9 +24,9 @@
   max-width: max-content;
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
-  background: rgb(10 10 16 / 0.55);
+  background: var(--nav-bg);
   backdrop-filter: blur(18px) saturate(1.4);
-  box-shadow: 0 10px 40px -10px rgb(0 0 0 / 0.6);
+  box-shadow: var(--shadow-nav);
   // Entrance: slides down once the splash curtain opens
   opacity: 0;
   transform: translateY(-140%);
@@ -43,7 +43,7 @@
 }
 
 :host(.is-scrolled) .pill {
-  background: rgb(10 10 16 / 0.78);
+  background: var(--nav-bg-scrolled);
   border-color: var(--border-strong);
 }
 
@@ -54,7 +54,7 @@
   height: 2.5rem;
   border-radius: 50%;
   background: var(--gradient);
-  color: #06060a;
+  color: var(--on-gradient);
   font-weight: 700;
   font-size: 0.85rem;
   letter-spacing: -0.02em;
@@ -115,7 +115,7 @@
     transition: color 0.3s;
 
     &[aria-pressed='true'] {
-      color: #06060a;
+      color: var(--on-text);
     }
   }
 
@@ -135,13 +135,39 @@
   }
 }
 
-.burger {
+.icon-btn {
   display: grid;
   place-items: center;
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 50%;
+  color: var(--text-muted);
+  --icon-size: 1.15rem;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+
+  &:hover {
+    color: var(--text);
+    background: var(--surface-hover);
+  }
+}
+
+// The icon is recreated on every theme change, so this plays once per switch
+.swap {
+  animation: swap 0.6s var(--ease-spring);
+}
+
+@keyframes swap {
+  from {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.4);
+  }
+}
+
+.burger {
   --icon-size: 1.2rem;
+  color: var(--text);
 }
 
 // Mobile menu sheet
@@ -152,7 +178,7 @@
   display: grid;
   align-content: center;
   padding: 5rem var(--gutter) 2rem;
-  background: rgb(6 6 10 / 0.94);
+  background: var(--overlay-bg);
   backdrop-filter: blur(24px);
 
   ul {

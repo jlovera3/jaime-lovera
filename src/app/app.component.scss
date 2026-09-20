@@ -12,7 +12,7 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(90px);
-  opacity: 0.5;
+  opacity: var(--orb-opacity);
   will-change: transform;
 
   &--a {
@@ -20,7 +20,7 @@
     left: -10vmax;
     width: 55vmax;
     height: 55vmax;
-    background: radial-gradient(circle, rgb(99 102 241 / 0.55), transparent 65%);
+    background: radial-gradient(circle, var(--orb-a), transparent 65%);
     animation: drift-a 26s ease-in-out infinite alternate;
   }
   &--b {
@@ -28,7 +28,7 @@
     right: -20vmax;
     width: 50vmax;
     height: 50vmax;
-    background: radial-gradient(circle, rgb(45 212 191 / 0.28), transparent 65%);
+    background: radial-gradient(circle, var(--orb-b), transparent 65%);
     animation: drift-b 32s ease-in-out infinite alternate;
   }
   &--c {
@@ -36,7 +36,7 @@
     left: 20vmax;
     width: 45vmax;
     height: 45vmax;
-    background: radial-gradient(circle, rgb(168 85 247 / 0.28), transparent 65%);
+    background: radial-gradient(circle, var(--orb-c), transparent 65%);
     animation: drift-a 38s ease-in-out infinite alternate-reverse;
   }
 }

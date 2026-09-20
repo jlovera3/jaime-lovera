@@ -17,6 +17,8 @@ export interface Content {
     openMenu: string;
     closeMenu: string;
     backToTop: string;
+    switchToLight: string;
+    switchToDark: string;
   };
   nav: {
     about: string;

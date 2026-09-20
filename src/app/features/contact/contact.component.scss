@@ -4,8 +4,8 @@
   padding: clamp(2rem, 6vw, 5rem);
   border-radius: clamp(1.5rem, 3vw, 2.25rem);
   background:
-    radial-gradient(120% 90% at 100% 0%, rgb(139 140 255 / 0.16), transparent 60%),
-    radial-gradient(90% 80% at 0% 100%, rgb(94 234 212 / 0.1), transparent 60%),
+    radial-gradient(120% 90% at 100% 0%, var(--panel-glow-a), transparent 60%),
+    radial-gradient(90% 80% at 0% 100%, var(--panel-glow-b), transparent 60%),
     var(--bg-elevated);
   border-color: var(--border-strong);
 }
@@ -19,8 +19,8 @@
   border-radius: 50%;
   border: 1px solid var(--border);
   box-shadow:
-    0 0 0 4rem rgb(255 255 255 / 0.012),
-    0 0 0 8rem rgb(255 255 255 / 0.008);
+    0 0 0 4rem var(--aura-ring),
+    0 0 0 8rem var(--aura-ring);
   animation: breathe 9s ease-in-out infinite;
   pointer-events: none;
 }

@@ -35,7 +35,20 @@
 
     <button
       type="button"
-      class="burger"
+      class="icon-btn"
+      [attr.aria-label]="themeService.theme() === 'dark' ? content().a11y.switchToLight : content().a11y.switchToDark"
+      (click)="toggleTheme($event)"
+    >
+      @if (themeService.theme() === 'dark') {
+        <app-icon class="swap" name="sun" />
+      } @else {
+        <app-icon class="swap" name="moon" />
+      }
+    </button>
+
+    <button
+      type="button"
+      class="icon-btn burger"
       [attr.aria-label]="menuOpen() ? content().a11y.closeMenu : content().a11y.openMenu"
       [attr.aria-expanded]="menuOpen()"
       aria-controls="mobile-menu"
