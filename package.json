@@ -12,7 +12,8 @@
     "build:native": "ng build && npx cap sync",
     "start:android": "npm run build:native && npx cap open android",
     "start:ios": "npm run build:native && npx cap open ios",
-    "cv": "ng build && node scripts/build-cv.mjs"
+    "cv": "ng build && node scripts/build-cv.mjs",
+    "og": "node scripts/build-og.mjs"
   },
   "private": true,
   "dependencies": {

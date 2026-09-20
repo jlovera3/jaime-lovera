@@ -11,6 +11,7 @@ npm start          # http://localhost:4200  (add ?intro to replay the splash)
 npm test           # unit tests (Vitest)
 npm run build      # production build in www/
 npm run cv         # regenerate the CV PDFs (see below)
+npm run og         # regenerate the social-sharing image (see below)
 ```
 
 ## Where things live
@@ -41,6 +42,19 @@ npm run cv    # builds the app and writes src/assets/cv/Jaime-Lovera-CV-{en,es}.
 
 Run it whenever you change `src/app/content/` or `src/app/data/`, then commit the PDFs.
 It needs Google Chrome or Chromium (set `CHROME_PATH` if it is not in a standard location).
+
+## Social sharing image
+
+The preview shown when the link is pasted into LinkedIn, WhatsApp, Slack… is `src/assets/og/og-image.jpg`
+(1200×630), rendered from `scripts/og-template.html`.
+
+```bash
+npm run og                              # uses the site portrait
+PHOTO=~/Pictures/me.jpg npm run og      # use another photo (square-ish crop works best)
+```
+
+Chat apps cache previews: after changing it, refresh LinkedIn with its
+[Post Inspector](https://www.linkedin.com/post-inspector/).
 
 ## Deploy
 
