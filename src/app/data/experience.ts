@@ -36,6 +36,7 @@ export const COMPANIES: Company[] = [
         name: 'Regal',
         client: 'Generali · Car, home & more',
         logo: 'assets/projects/regal-app.svg',
+        inset: true,
         webUrl: 'https://tarificador-coche.regal.es/webapps/omnichannel-regal/#/autos/questions/insurance-start',
       },
       {
@@ -43,6 +44,7 @@ export const COMPANIES: Company[] = [
         name: 'Genesis',
         client: 'Generali · Car, home & more',
         logo: 'assets/projects/genesis-app.svg',
+        inset: true,
         webUrl:
           'https://tarificador-coche.genesis.es/webapps/omnichannel-genesis/#/autos/questions/insurance-start',
       },
@@ -89,6 +91,7 @@ export const COMPANIES: Company[] = [
         id: 'reciclos',
         name: 'Reciclos',
         logo: 'assets/projects/reciclos-app-logo.webp',
+        inset: true,
         googleUrl: 'https://play.google.com/store/apps/details?id=com.ecoembes.reciclos',
         appleUrl: 'https://apps.apple.com/es/app/reciclos-tu-app-para-reciclar/id1487106432',
       },
@@ -124,11 +127,15 @@ export const COMPANIES: Company[] = [
         id: 'digitalizate-plus',
         name: 'Digitalízate Plus',
         logo: 'assets/projects/logo_fundae.svg',
+        // Web platform (renamed Experiencia Fundae in 2024); it has no store apps
+        webUrl: 'https://experienciafundae.es/',
       },
       {
         id: 'roble',
         name: 'Roble',
         logo: 'assets/projects/mova_icon.webp',
+        googleUrl: 'https://play.google.com/store/apps/details?id=org.madrid.raiz.roble',
+        appleUrl: 'https://apps.apple.com/es/app/roble/id1458472789',
       },
     ],
   },

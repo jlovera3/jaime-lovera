@@ -25,7 +25,15 @@
   <ul class="grid">
     @for (app of apps(); track app.id) {
       <li class="app card" appSpotlight animate.enter="app-in">
-        <img class="icon-img" [src]="app.logo" alt="" loading="lazy" width="64" height="64" />
+        <img
+          class="icon-img"
+          [class.icon-img--inset]="app.inset"
+          [src]="app.logo"
+          alt=""
+          loading="lazy"
+          width="64"
+          height="64"
+        />
         <div class="meta">
           <h3>{{ app.name }}</h3>
           <p>{{ app.client ?? app.company }}</p>

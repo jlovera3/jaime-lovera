@@ -10,6 +10,8 @@ export interface AppProject {
   client?: string;
   /** Square icon */
   logo: string;
+  /** Adds breathing room around icons that fill their whole square */
+  inset?: boolean;
   googleUrl?: string;
   appleUrl?: string;
   webUrl?: string;
