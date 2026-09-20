@@ -17,6 +17,9 @@ export class SkillsComponent {
   protected readonly text = computed(() => this.language.content().skills);
 
   protected readonly groups = computed(() =>
-    SKILL_GROUPS.map((group) => ({ ...group, ...this.text().groups[group.id] })),
+    SKILL_GROUPS.map((group) => {
+      const copy = this.text().groups[group.id];
+      return { id: group.id, ...copy, items: copy.items ?? group.items };
+    }),
   );
 }

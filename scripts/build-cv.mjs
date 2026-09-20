@@ -12,6 +12,7 @@ const dist = join(root, 'www');
 const out = join(root, 'src/assets/cv');
 const languages = ['en', 'es'];
 
+
 const chrome =
   process.env.CHROME_PATH ??
   [

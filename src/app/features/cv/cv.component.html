@@ -72,7 +72,7 @@
         }
       </dl>
     </div>
-    <div>
+    <div class="side">
       <h2>{{ t().cv.education }}</h2>
       @for (entry of education; track entry.id) {
         <div class="edu">
@@ -83,6 +83,16 @@
           <p class="meta">{{ entry.place }}</p>
         </div>
       }
+
+      <h2 class="second">{{ t().cv.languages.title }}</h2>
+      <ul class="langs">
+        @for (language of t().cv.languages.items; track language.name) {
+          <li>
+            <strong>{{ language.name }}</strong>
+            <span>{{ language.level }}</span>
+          </li>
+        }
+      </ul>
     </div>
   </section>
 </article>

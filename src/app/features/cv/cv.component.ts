@@ -44,7 +44,7 @@ export class CvComponent {
   protected readonly skills = computed(() =>
     SKILL_GROUPS.map((group) => ({
       title: this.t().skills.groups[group.id].title,
-      items: group.items.join(' · '),
+      items: (this.t().skills.groups[group.id].items ?? group.items).join(' · '),
     })),
   );
 

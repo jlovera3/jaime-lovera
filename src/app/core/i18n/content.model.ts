@@ -72,7 +72,8 @@ export interface Content {
     eyebrow: string;
     title: string;
     subtitle: string;
-    groups: Record<SkillGroupId, { title: string; description: string }>;
+    /** `items` overrides the language-neutral list for groups made of phrases rather than technology names */
+    groups: Record<SkillGroupId, { title: string; description: string; items?: string[] }>;
   };
   contact: {
     eyebrow: string;
@@ -88,6 +89,7 @@ export interface Content {
     experience: string;
     skills: string;
     education: string;
+    languages: { title: string; items: { name: string; level: string }[] };
     engagements: string;
     stack: string;
     selectedApps: string;

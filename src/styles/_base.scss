@@ -123,6 +123,12 @@ html.cv-mode body {
   background: #fff;
 }
 
+// The site is `color-scheme: dark`, which makes Chrome paint a #121212 canvas over the whole printed
+// page (margins included). The CV is always a light sheet.
+html.cv-mode {
+  color-scheme: light;
+}
+
 @page {
   size: A4;
   margin: 13mm 15mm;

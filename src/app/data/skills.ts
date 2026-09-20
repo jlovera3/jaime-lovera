@@ -19,12 +19,6 @@ export const SKILL_GROUPS: SkillGroup[] = [
   { id: 'mobile', items: ['Ionic', 'Capacitor', 'Cordova', 'iOS & Android', 'AR / VR'] },
   { id: 'backend', items: ['Node.js', 'Laravel', 'PHP'] },
   { id: 'data', items: ['MongoDB', 'MySQL', 'SQLite', 'Firebase'] },
-  { id: 'craft', items: [
-      'Technical project management',
-      'Team leadership',
-      'Architecture',
-      'Agile / Scrum',
-      'Git',
-      'Store releases',
-    ], },
+  // Phrases rather than technologies: the list lives in content/{en,es}.ts so it is translated
+  { id: 'craft', items: [] },
 ];

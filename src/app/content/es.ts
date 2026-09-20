@@ -74,6 +74,7 @@ export const ES: Content = {
           'Desarrollo de la app que representa el portal web de la empresa.',
           'Comunicar, mejorar y aplicar los conceptos internos de producto.',
           'Responsable del despliegue de las apps en las tiendas.',
+          'Dos años trabajando a diario en inglés, hablado y escrito, en una empresa alemana.',
         ],
       },
       nttdata: {
@@ -157,7 +158,18 @@ export const ES: Content = {
       },
       backend: { title: 'Backend', description: 'Las APIs y servicios que hay detrás de las apps.' },
       data: { title: 'Datos', description: 'Del almacenamiento local a las bases de datos en la nube.' },
-      craft: { title: 'Oficio', description: 'Cómo trabajo en equipo y saco las cosas adelante.' },
+      craft: {
+        title: 'Oficio',
+        description: 'Cómo trabajo en equipo y saco las cosas adelante.',
+        items: [
+          'Gestión técnica de proyectos',
+          'Liderazgo de equipos',
+          'Arquitectura',
+          'Agile / Scrum',
+          'Git',
+          'Publicación en tiendas',
+        ],
+      },
     },
   },
   contact: {
@@ -175,6 +187,16 @@ export const ES: Content = {
     experience: 'Experiencia',
     skills: 'Skills',
     education: 'Formación',
+    languages: {
+      title: 'Idiomas',
+      items: [
+        { name: 'Español', level: 'Nativo' },
+        {
+          name: 'Inglés',
+          level: 'Alto, conversacional y escrito · dos años trabajando en inglés para una empresa alemana',
+        },
+      ],
+    },
     engagements: 'Proyectos para clientes',
     stack: 'Stack',
     selectedApps: 'Apps destacadas',

@@ -180,3 +180,25 @@ h4 {
 .edu {
   margin-bottom: 2.2mm;
 }
+
+.second {
+  margin-top: 5mm;
+}
+
+.langs {
+  display: grid;
+  gap: 1.6mm;
+
+  li {
+    display: grid;
+    gap: 0.3mm;
+  }
+
+  strong {
+    font-weight: 650;
+  }
+
+  span {
+    color: #4b4b58;
+  }
+}
