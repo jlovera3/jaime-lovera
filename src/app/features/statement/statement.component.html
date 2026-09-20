@@ -1,0 +1,12 @@
+<section id="statement" class="statement" appScrollProgress="pin" [style.--n]="words().length">
+  <div class="stage">
+    <span class="glow" aria-hidden="true"></span>
+    <p class="text">
+      @for (word of words(); track $index) {
+        <span class="w" [class.hl]="word.highlight" [style.--i]="$index">{{ word.text }}</span>
+        {{ ' ' }}
+      }
+    </p>
+    <span class="meter" aria-hidden="true"><i></i></span>
+  </div>
+</section>

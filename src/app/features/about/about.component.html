@@ -11,16 +11,7 @@
     </div>
 
     <div class="side">
-      <ul class="stats">
-        @for (stat of stats(); track stat.label; let i = $index) {
-          <li class="card stat" appSpotlight [appReveal]="i * 100">
-            <strong><app-count-up [value]="stat.value" [suffix]="stat.suffix" /></strong>
-            <span>{{ stat.label }}</span>
-          </li>
-        }
-      </ul>
-
-      <div class="edu card" appSpotlight [appReveal]="150">
+      <div class="edu card sweep" appSpotlight appReveal>
         <h3 class="eyebrow">{{ about().educationTitle }}</h3>
         <ol>
           @for (entry of education; track entry.id) {
@@ -34,6 +25,28 @@
             </li>
           }
         </ol>
+      </div>
+
+      <div class="langs card sweep" appSpotlight [appReveal]="120">
+        <h3 class="eyebrow">{{ languagesTitle() }}</h3>
+        <ul>
+          @for (language of languages(); track language.id) {
+            <li>
+              <div class="lang-row">
+                <strong>{{ language.name }}</strong>
+                <span class="level">{{ language.level }}</span>
+                <span class="pips" aria-hidden="true">
+                  @for (level of levels; track level) {
+                    <i [class.on]="level <= language.score" [style.--k]="level"></i>
+                  }
+                </span>
+              </div>
+              @if (language.note) {
+                <p class="note">{{ language.note }}</p>
+              }
+            </li>
+          }
+        </ul>
       </div>
     </div>
   </div>

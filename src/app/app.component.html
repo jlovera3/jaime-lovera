@@ -12,6 +12,7 @@
   </div>
 
   <div class="scroll-progress" aria-hidden="true"></div>
+  <app-cursor-light />
 
   @if (intro.stage() !== 'done') {
     <app-splash />
@@ -21,9 +22,11 @@
   <div [attr.inert]="intro.stage() === 'playing' ? '' : null">
     <app-nav />
     <main id="main">
-      <app-hero />
+      <app-hero appScrollProgress="exit" />
       <app-marquee />
+      <app-statement />
       <app-about />
+      <app-impact />
       <app-experience />
       <app-work />
       <app-skills />

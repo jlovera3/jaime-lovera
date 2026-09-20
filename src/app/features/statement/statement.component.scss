@@ -1,0 +1,89 @@
+// Tall section + sticky stage: the page scrolls while the sentence stays put and fills with light.
+// `--p` (0 → 1) is written by ScrollProgressDirective; every word derives its own "lit" amount from it.
+:host {
+  display: block;
+}
+
+.statement {
+  position: relative;
+  height: 280vh;
+}
+
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding-inline: var(--gutter);
+}
+
+.glow {
+  position: absolute;
+  inset: 18% 8%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, var(--accent-glow), transparent 72%);
+  filter: blur(70px);
+  opacity: calc(0.12 + var(--p, 0) * 0.88);
+  scale: calc(0.55 + var(--p, 0) * 0.55);
+  pointer-events: none;
+}
+
+.text {
+  position: relative;
+  max-width: 19em;
+  font-size: clamp(2rem, 5.2vw, 4.6rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.w {
+  --lit: clamp(0, calc((var(--p, 0) * (var(--n) + 3) - var(--i)) / 3), 1);
+  // Brightest while a word is being lit: drives the halo
+  --edge: calc(4 * var(--lit) * (1 - var(--lit)));
+  display: inline-block;
+  // Colour (not opacity) so unlit words keep the muted-text contrast
+  color: color-mix(in srgb, var(--text) calc(var(--lit) * 100%), var(--text-subtle));
+  filter: blur(calc((1 - var(--lit)) * 2.5px));
+  text-shadow: 0 0 calc(var(--edge) * 30px)
+    color-mix(in srgb, var(--accent-2) calc(var(--edge) * 100%), transparent);
+}
+
+.hl {
+  color: color-mix(in srgb, var(--accent) calc(var(--lit) * 100%), var(--text-subtle));
+}
+
+.meter {
+  position: absolute;
+  bottom: 9svh;
+  width: min(280px, 55%);
+  height: 2px;
+  background: var(--border);
+  overflow: hidden;
+
+  i {
+    display: block;
+    height: 100%;
+    background: var(--gradient);
+    transform-origin: left;
+    transform: scaleX(var(--p, 0));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statement {
+    height: auto;
+    padding-block: var(--section-space);
+  }
+  .stage {
+    position: static;
+    height: auto;
+  }
+  .w {
+    filter: none;
+  }
+}

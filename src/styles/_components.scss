@@ -141,3 +141,55 @@
     opacity: 1;
   }
 }
+
+// Border that lights up once as a card scrolls into view: a comet of accent light runs around the edge
+@property --sweep {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.sweep::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--sweep),
+    transparent 0 62%,
+    var(--accent) 82%,
+    var(--accent-2) 94%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sweep.is-visible::after,
+  .is-visible .sweep::after {
+    animation: sweep 2.2s var(--ease-out) 0.25s 1 both;
+  }
+}
+
+@keyframes sweep {
+  0% {
+    --sweep: 0deg;
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    --sweep: 360deg;
+    opacity: 0;
+  }
+}

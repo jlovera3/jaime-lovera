@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, computed, effect, inject, input } f
 import { CONTENT, LOCALES } from '../../content';
 import { Lang } from '../../core/i18n/content.model';
 import { buildJobs } from '../../core/util/jobs';
+import { buildLanguages } from '../../core/util/languages';
 import { EDUCATION } from '../../data/education';
 import { PROFILE } from '../../data/profile';
 import { SKILL_GROUPS } from '../../data/skills';
@@ -40,6 +41,8 @@ export class CvComponent {
       apps: job.engagements.length ? '' : job.projects.map((p) => p.name).join(', '),
     })),
   );
+
+  protected readonly languages = computed(() => buildLanguages(this.t().languages));
 
   protected readonly skills = computed(() =>
     SKILL_GROUPS.map((group) => ({

@@ -49,7 +49,22 @@ export const EN: Content = {
       university: 'Industrial Engineering',
       degree: 'Higher Degree in Multiplatform Application Development',
     },
-    stats: { years: 'Years of experience', companies: 'Companies', apps: 'Apps published' },
+  },
+  statement:
+    '*Clean architecture.* *Fast interfaces.* Teams that deliver. I care about the details that make a product *feel right*, from the first pixel to the store release.',
+  impact: { years: 'Years of experience', companies: 'Companies', apps: 'Apps published' },
+  languages: {
+    title: 'Languages',
+    items: {
+      es: { name: 'Spanish', level: 'Native' },
+      en: {
+        name: 'English',
+        level: 'Advanced',
+        note: 'Spoken and written · two years working in English for a German company',
+      },
+      pt: { name: 'Portuguese', level: 'Basic' },
+      fr: { name: 'French', level: 'Basic' },
+    },
   },
   experience: {
     eyebrow: 'Experience',
@@ -187,16 +202,6 @@ export const EN: Content = {
     experience: 'Experience',
     skills: 'Skills',
     education: 'Education',
-    languages: {
-      title: 'Languages',
-      items: [
-        { name: 'Spanish', level: 'Native' },
-        {
-          name: 'English',
-          level: 'Advanced, spoken and written · two years working in English for a German company',
-        },
-      ],
-    },
     engagements: 'Client engagements',
     stack: 'Stack',
     selectedApps: 'Selected apps',

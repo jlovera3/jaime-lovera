@@ -1,4 +1,4 @@
-import { CompanyId, EducationId, EngagementId, SkillGroupId } from '../../data/data.model';
+import { CompanyId, EducationId, EngagementId, LanguageId, SkillGroupId } from '../../data/data.model';
 
 export type Lang = 'en' | 'es';
 
@@ -43,7 +43,13 @@ export interface Content {
     paragraphs: string[];
     educationTitle: string;
     education: Record<EducationId, string>;
-    stats: { years: string; companies: string; apps: string };
+  };
+  /** Scroll-lit statement; `*asterisks*` mark highlighted phrases */
+  statement: string;
+  impact: { years: string; companies: string; apps: string };
+  languages: {
+    title: string;
+    items: Record<LanguageId, { name: string; level: string; note?: string }>;
   };
   experience: {
     eyebrow: string;
@@ -89,7 +95,6 @@ export interface Content {
     experience: string;
     skills: string;
     education: string;
-    languages: { title: string; items: { name: string; level: string }[] };
     engagements: string;
     stack: string;
     selectedApps: string;

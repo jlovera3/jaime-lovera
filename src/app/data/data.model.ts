@@ -2,6 +2,7 @@ export type CompanyId = 'knowmad' | 'meinestadt' | 'nttdata' | 'magtel' | 'ptv';
 export type EngagementId = 'generali' | 'nodus' | 'ofiteco';
 export type SkillGroupId = 'frontend' | 'mobile' | 'backend' | 'data' | 'craft';
 export type EducationId = 'university' | 'degree';
+export type LanguageId = 'es' | 'en' | 'pt' | 'fr';
 
 export interface AppProject {
   id: string;
@@ -56,6 +57,12 @@ export interface EducationEntry {
   end: number;
   place: string;
   mapUrl: string;
+}
+
+export interface LanguageEntry {
+  id: LanguageId;
+  /** 1 (basic) to 5 (native): drives the level meter */
+  score: 1 | 2 | 3 | 4 | 5;
 }
 
 export interface Profile {

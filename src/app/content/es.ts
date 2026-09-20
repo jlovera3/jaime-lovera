@@ -49,7 +49,22 @@ export const ES: Content = {
       university: 'Ingeniería Industrial',
       degree: 'Ciclo Superior en Desarrollo de Aplicaciones Multiplataforma',
     },
-    stats: { years: 'Años de experiencia', companies: 'Empresas', apps: 'Apps publicadas' },
+  },
+  statement:
+    '*Arquitectura limpia.* *Interfaces rápidas.* Equipos que entregan. Me importan los detalles que hacen que un producto *se sienta bien*, del primer píxel a la publicación en tienda.',
+  impact: { years: 'Años de experiencia', companies: 'Empresas', apps: 'Apps publicadas' },
+  languages: {
+    title: 'Idiomas',
+    items: {
+      es: { name: 'Español', level: 'Nativo' },
+      en: {
+        name: 'Inglés',
+        level: 'Alto',
+        note: 'Conversacional y escrito · dos años trabajando en inglés para una empresa alemana',
+      },
+      pt: { name: 'Portugués', level: 'Básico' },
+      fr: { name: 'Francés', level: 'Básico' },
+    },
   },
   experience: {
     eyebrow: 'Experiencia',
@@ -187,16 +202,6 @@ export const ES: Content = {
     experience: 'Experiencia',
     skills: 'Skills',
     education: 'Formación',
-    languages: {
-      title: 'Idiomas',
-      items: [
-        { name: 'Español', level: 'Nativo' },
-        {
-          name: 'Inglés',
-          level: 'Alto, conversacional y escrito · dos años trabajando en inglés para una empresa alemana',
-        },
-      ],
-    },
     engagements: 'Proyectos para clientes',
     stack: 'Stack',
     selectedApps: 'Apps destacadas',

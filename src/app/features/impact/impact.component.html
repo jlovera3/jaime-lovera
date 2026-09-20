@@ -1,0 +1,15 @@
+<section class="impact" appScrollProgress="pass">
+  <span class="beam" aria-hidden="true"></span>
+  <div class="container row">
+    @for (stat of stats(); track stat.label) {
+      <div class="stat">
+        <p class="figure">
+          <span class="sr-only">{{ stat.value }}{{ stat.suffix }}</span>
+          <span class="value" aria-hidden="true"><span class="num">0</span>{{ stat.suffix }}</span>
+        </p>
+        <p class="label">{{ stat.label }}</p>
+        <span class="bar" aria-hidden="true"><i></i></span>
+      </div>
+    }
+  </div>
+</section>

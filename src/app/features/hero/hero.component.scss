@@ -60,6 +60,17 @@
 }
 
 // Portrait
+// Leaving the hero: text drifts up and fades, the portrait recedes (`--p` from ScrollProgressDirective)
+.hero__text {
+  translate: 0 calc(var(--p, 0) * -70px);
+  opacity: calc(1 - var(--p, 0) * 1.15);
+}
+
+.hero__visual {
+  translate: 0 calc(var(--p, 0) * -46px);
+  scale: calc(1 - var(--p, 0) * 0.16);
+}
+
 .hero__visual {
   position: relative;
   justify-self: center;

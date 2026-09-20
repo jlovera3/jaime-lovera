@@ -84,12 +84,12 @@
         </div>
       }
 
-      <h2 class="second">{{ t().cv.languages.title }}</h2>
+      <h2 class="second">{{ t().languages.title }}</h2>
       <ul class="langs">
-        @for (language of t().cv.languages.items; track language.name) {
+        @for (language of languages(); track language.id) {
           <li>
             <strong>{{ language.name }}</strong>
-            <span>{{ language.level }}</span>
+            <span>{{ language.level }}@if (language.note) { · {{ language.note }} }</span>
           </li>
         }
       </ul>
